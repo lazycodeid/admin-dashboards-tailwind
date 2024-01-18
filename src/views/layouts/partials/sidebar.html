@@ -1,0 +1,99 @@
+<aside lazy-simplebar-init class="_lazy-simplebar-wrapper">
+    <div lazy-simplebar-backdrop class="_lazy-simplebar-backdrop"></div>
+    <div lazy-simplebar-content class="_lazy-simplebar-content">
+        <div class="_lazy-simplebar-header">
+            <div class="flex flex-shrink-0 items-center">
+                <img class="px-3.5 h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            </div>
+        </div>
+        <nav>
+            <div class="_lazy-navcollapse">
+                <div class="_lazy-navcollapse-subheader">OVERVIEW</div>
+                <div class="_lazy-navcollapse-content is-active">
+                    <div class="w-full">
+                        <a href="" class="_lazy-nav-item is-active">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-house"></span>
+                            <span class="_lazy-nav-label">App</span>
+                        </a>
+                        <a href="" class="_lazy-nav-item">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-cart-shopping-fast"></span>
+                            <span class="_lazy-nav-label">E-Commerce</span>
+                        </a>
+                        <a href="" class="_lazy-nav-item">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-chart-simple"></span>
+                            <span class="_lazy-nav-label">Analytics</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="_lazy-navcollapse">
+                <div class="_lazy-navcollapse-subheader">MANAGEMENT</div>
+                <div class="_lazy-navcollapse-content is-active">
+                    <div class="w-full">
+                        
+                        <div lazy-collapse-init >
+                            <button type="button" lazy-collapse-toggle class="_lazy-nav-item">
+                                <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-user"></span>
+                                <span class="_lazy-nav-label">User</span>
+                                <span class="_lazy-nav-arrow" lazy-collapse-arrow lazy-icon="fa-duotone fa-chevron-right"></span>
+                            </button>
+                            <div lazy-collapse-content class="_lazy-navcollapse-content">
+                                <a href="" class="_lazy-nav-subitem">
+                                    <span class="_lazy-nav-dot"></span>
+                                    <span class="_lazy-nav-label">Profile</span>
+                                </a>
+                                <a href="" class="_lazy-nav-subitem">
+                                    <span class="_lazy-nav-dot"></span>
+                                    <span class="_lazy-nav-label">List</span>
+                                </a>
+                                <a href="" class="_lazy-nav-subitem">
+                                    <span class="_lazy-nav-dot"></span>
+                                    <span class="_lazy-nav-label">Account</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="_lazy-navcollapse">
+                <div class="_lazy-navcollapse-subheader">OTHER CASES</div>
+                <div class="_lazy-navcollapse-content is-active">
+                    <div class="w-full">
+
+                        <a href="" class="_lazy-nav-item">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-layer-group"></span>
+                            <span class="_lazy-nav-label">Item Label</span>
+                            <span class="_lazy-badge-xs badge-info">
+                                <i class="fa-duotone fa-sparkles"></i>
+                                NEW
+                            </span>
+                        </a>
+
+                        <button disabled type="button" class="_lazy-nav-item disabled">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-ban"></span>
+                            <span class="_lazy-nav-label">Item Disabled</span>
+                        </button>
+
+                        <a href="" class="_lazy-nav-item">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-bars-staggered"></span>
+                            <span class="_lazy-nav-caption"> 
+                                <div class="label">Item Caption</div>
+                                <div class="caption" lazy-tooltip="Example item caption lazy template by ilsya.">Example item caption lazy template by ilsya</div>
+                            </span>
+                        </a>
+
+                        @@for(let i = 0; i < 10; i++){
+                        <a href="" class="_lazy-nav-item">
+                            <span class="_lazy-nav-icon" lazy-icon="fa-duotone fa-cards-blank"></span>
+                            <span class="_lazy-nav-label">Blank</span>
+                        </a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</aside>
