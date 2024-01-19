@@ -30,7 +30,7 @@ document.querySelectorAll("[lazy-dropdown-avatar]").forEach((element) => {
     function toggle() {
         if (isOpen) {
             document.removeEventListener("keyup", escapeKey);
-            document.body.classList.remove("_lazy-disable-scroll");
+            window.lazyDisableScrollbar(false)
 
             content.style.opacity = 0;
             content.style.transform = "scale(0.95)";
@@ -41,7 +41,7 @@ document.querySelectorAll("[lazy-dropdown-avatar]").forEach((element) => {
             }, 300)
         } else {
             document.addEventListener("keyup", escapeKey);
-            document.body.classList.add("_lazy-disable-scroll");
+            window.lazyDisableScrollbar(true)
 
             content.classList.add("is-active");
             button.classList.add("is-active");

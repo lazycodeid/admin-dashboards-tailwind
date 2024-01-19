@@ -26,7 +26,7 @@ if(simplebar) {
             simplebar_body.classList.remove('translate-x-0')
             simplebar_body.classList.add('-translate-x-full')
 
-            document.body.classList.remove('_lazy-disable-scroll');
+            window.lazyDisableScrollbar(false)
         } else {
             document.addEventListener("keyup", escapeKey);
             
@@ -38,7 +38,7 @@ if(simplebar) {
 
             simplebar_body.classList.remove('-translate-x-full')
             simplebar_body.classList.add('translate-x-0')
-            document.body.classList.add('_lazy-disable-scroll')
+            window.lazyDisableScrollbar(true)
         }
         isOpen = !isOpen
     }

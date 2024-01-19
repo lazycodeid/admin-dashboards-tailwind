@@ -38,7 +38,9 @@
     // main layouts -
 
     ._lazy-disable-scroll
-        @apply overflow-hidden md:pr-[8px]
+        @apply overflow-hidden
+        &.with-pr
+            @apply md:pr-[8px]
 
     .background-animate
         background-size: 400%
