@@ -20,6 +20,8 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
-document.querySelector("[lazy-theme-toggle]").addEventListener("click", () => {
-    toggleTheme(theme == 'dark' ? 'light' : 'dark');
+document.querySelectorAll("[lazy-theme-toggle]").forEach((element) => {
+    element.addEventListener("click", () => {
+        toggleTheme(theme == 'dark' ? 'light' : 'dark');
+    })
 })

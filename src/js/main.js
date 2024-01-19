@@ -4,6 +4,24 @@ document.querySelectorAll("[lazy-icon]").forEach((element)=>{
     element.insertAdjacentElement("beforeend",i)
 })
 
+// for demo auto active sidebar
+document.querySelectorAll("[lazy-simplebar-init] nav ._lazy-nav-item").forEach((element)=>{
+    let href = location.href
+    href = href.replace("#", "")
+    
+    if(element.nodeName == "A"){
+        if (element.href != href) return
+        element.classList.add("is-active")
+    } else {
+        const subitem = element.closest("[lazy-collapse-init]")
+        if(!subitem?.querySelector("._lazy-navcollapse-content")) return
+        subitem.querySelectorAll("._lazy-navcollapse-content ._lazy-nav-subitem").forEach(element => {
+            if(element.href != href) return
+            element.classList.add("is-active")
+        })
+    }
+})
+ 
 // console.log(`
 //   く__,.ヘヽ.        /  ,ー､ 〉
 //            ＼ ', !-─‐-i  /  /´
