@@ -7,7 +7,10 @@
             @apply fixed w-full h-full bg-gray-900/80 z-40 md:hidden #{!important}
         
         ._lazy-simplebar-content
-            @apply overflow-y-scroll flex flex-col h-full fixed md:w-[280px] md:border-r border-0 border-dashed border-gray-500/20 w-[280px] max-w-full z-50 md:bg-gray-200 md:dark:bg-gray-900 dark:bg-gray-800/90 bg-white/90 bg-gradient md:bg-gradient-none
+            @apply overflow-y-scroll flex flex-col h-full fixed md:w-[280px] md:border-r border-0 border-dashed border-gray-500/20 w-[280px] max-w-full z-50 md:bg-gray-200 dark:bg-gray-800/90 bg-white/90 bg-gradient md:bg-gradient-none md:dark:bg-gray-900
+
+            &.v2
+                @apply border-none md:dark:bg-gray-800/40 md:bg-white/90 md:bg-gradient
 
             &::-webkit-scrollbar
                 @apply hidden

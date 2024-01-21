@@ -26,6 +26,26 @@
 .btn-circle
     @apply relative inline-flex dark:text-gray-500 text-gray-600 hover:bg-gray-500/[0.08] p-2 appearance-none rounded-full select-none justify-center items-center
 
+    &.btn-xs
+        @apply p-1
+        i
+            @apply w-[1em] h-[1em] text-sm
+
+    &.btn-sm
+        @apply p-1
+        i
+            @apply w-[1.25em] h-[1.25em] text-base
+    
+    &.btn-md
+        @apply p-1.5
+        i
+            @apply w-[1.25em] h-[1.25em] text-lg
+
+    &.btn-lg
+        @apply p-3
+        i
+            @apply w-[1.5em] h-[1.5em] text-lg
+
     // ripple effect start
     .ripple-wrapper
         @apply overflow-hidden h-full w-full absolute rounded-full
@@ -49,7 +69,7 @@
     // ripple effect end
 
     i
-        @apply w-[1.25em] h-[1.25em] justify-center items-center text-xl flex #{!important}
+        @apply w-[1.25em] h-[1.25em] justify-center items-center text-xl flex
     
     .btn-badge
         @apply absolute z-[1] flex p-1 text-xs h-5 min-w-5 bg-error-300 text-white rounded-full justify-center items-center right-0 top-0
