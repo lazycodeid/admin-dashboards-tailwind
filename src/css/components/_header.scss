@@ -1,0 +1,82 @@
+@layer components {
+    ._lazy-header-wrapper {
+        @apply flex flex-col sticky top-0 right-0 md:h-20 h-16 z-30 w-full bg-gray-200/80 dark:bg-gray-900/80 backdrop-blur-[6px] transition-all;
+
+        &.scroll-down {
+            @apply md:h-16 #{!important};
+        }
+        
+        &.scroll-top {
+            @apply md:h-20 #{!important};
+        }
+    
+        ._lazy-header-content {
+            @apply flex items-center h-full w-full mx-auto px-4 sm:px-6 md:px-10;
+            
+            ._lazy-header-start {
+                @apply flex flex-row justify-start items-center gap-x-2
+            }
+
+            ._lazy-header-end {
+                @apply flex flex-row justify-end items-center grow md:gap-x-3 gap-x-2
+            }
+        }
+    }
+    
+    ._lazy-avatar {
+        @apply relative inline-flex items-center justify-center p-2 focus:outline-0 rounded-full text-gray-500 w-10 h-10 bg-gray-500/[0.08] hover:scale-105 active:scale-95 transition-transform;
+
+        &.is-active {
+            @apply bg-primary-400;
+        }
+
+        ._lazy-avatar-wrapper {
+            @apply relative flex items-center justify-center flex-shrink-0 rounded-full overflow-hidden select-none w-9 h-9 border-2 border-solid dark:border-gray-900;
+            img {
+                @apply w-full h-full text-center object-cover object-center;
+            }
+        }
+    }
+    
+    ._lazy-avatar-content {
+        @apply absolute z-10 mt-2 w-48 right-0 rounded-md bg-white dark:bg-gray-800 dark:text-white bg-gradient shadow-lg transition-all duration-300 ease-in-out hidden;
+
+        &.is-active {
+            @apply block;
+        }
+
+        &::after {
+            @apply content-[''] w-[14px] h-[14px] absolute border-l-[3.5px] border-b-[3.5px] bg-white dark:bg-gray-800 border-white/80 dark:border-gray-800/80 right-3 top-[-6.6px];
+            clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+            transform: rotate(135deg);
+        }
+        
+        ._lazy-avatar-header {
+            @apply px-[18px] py-3.5 text-sm;
+
+            ._lazy-avatar-name {
+                @apply font-semibold text-gray-800 dark:text-white mb-0.5;
+            }
+
+            ._lazy-avatar-username {
+                @apply font-normal text-gray-600 dark:text-gray-400;
+            }
+        }
+
+        ._lazy-list-group {
+            @apply p-1.5 text-sm text-gray-800 dark:text-white;
+
+            ._lazy-list {
+                @apply block px-3 py-2 hover:bg-gray-500/[.08] rounded-lg;
+            }
+
+            ._lazy-list-logout {
+                @apply block px-3 py-2 hover:bg-gray-500/[.08] text-red-500 rounded-lg font-bold;
+            }
+        }
+    
+        ._lazy-border {
+            @apply border-dashed border-gray-500/20;
+        }
+    }
+}

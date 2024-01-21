@@ -1,0 +1,127 @@
+@layer components {
+    ._lazy-simplebar-wrapper {
+        @apply relative flex-shrink-0 w-[280px];
+    
+        ._lazy-simplebar-backdrop {
+            @apply fixed w-full h-full bg-gray-900/80 z-40;
+            @apply md:hidden #{!important};
+        }
+        
+        ._lazy-simplebar-content {
+            @apply overflow-y-scroll flex flex-col h-full fixed md:w-[280px] md:border-r border-0 border-dashed border-gray-500/20 w-[280px] max-w-full z-50 md:bg-gray-200 dark:bg-gray-800/90 bg-white/90 bg-gradient md:bg-gradient-none md:dark:bg-gray-900;
+    
+            &.v2 {
+                @apply border-none md:dark:bg-gray-800/40 md:bg-white/90 md:bg-gradient;
+            }
+    
+            &::-webkit-scrollbar {
+                @apply hidden;
+            }
+        }
+            
+        ._lazy-simplebar-header {
+            @apply w-full pt-6 pb-4 px-4 flex justify-between items-center flex-shrink-0;
+        }
+        
+    }
+        
+    
+    ._lazy-navcollapse {
+        @apply flex flex-col px-4 duration-300 ease-in-out;
+    }
+    
+    ._lazy-navcollapse-subheader {
+        @apply text-xs font-bold uppercase select-none cursor-pointer text-gray-500 dark:text-gray-600 mb-1 pt-4 pb-2 pl-3 pr-2;
+    }
+        
+    
+    ._lazy-navcollapse-content {
+        
+        @apply h-0 overflow-hidden;
+    
+        &.is-active {
+            @apply h-auto;
+        }
+    }
+    
+    ._lazy-nav-item {
+        @apply relative overflow-hidden flex justify-start items-center rounded-lg py-1 px-3 min-h-11 w-full select-none text-gray-600 dark:text-gray-500 mb-1 hover:bg-gray-500/[0.08] hover:dark:bg-gray-500/[0.08] focus:outline-none;
+    
+        &:focus {
+            @apply bg-gray-500/[0.08] dark:bg-gray-500/[0.08];
+        }
+        
+        &.disabled {
+            @apply opacity-50 hover:bg-transparent;
+        }
+    
+        &.is-active {
+            @apply text-primary-500 hover:bg-primary-500/20 dark:text-primary-300 bg-primary-500/10 #{!important};
+            
+            ._lazy-nav-arrow {
+                @apply rotate-90;
+            }
+        }
+    
+        ._lazy-nav-icon {
+            @apply mr-3 text-lg [&>i]:w-[1.25em] [&>i]:text-center flex-shrink-0;
+        }
+        
+        ._lazy-nav-label {
+            @apply text-sm font-semibold line-clamp-1 flex-auto min-w-0 text-start;
+        }
+        
+        ._lazy-nav-caption {
+            @apply flex-auto min-w-0 text-start;
+    
+            .label {
+                @apply line-clamp-1 text-sm font-semibold;
+            }
+    
+            .caption {
+                @apply text-xs line-clamp-1 font-medium text-gray-500 dark:text-gray-600;
+            }
+        }
+            
+          
+    
+        ._lazy-nav-arrow {
+            @apply ml-2 text-xs text-gray-600 dark:text-gray-500 transition-transform duration-300 ease-in-out;
+        }
+    
+        ._lazy-nav-badge {
+            @apply text-xs font-bold py-1 px-2 rounded-md;
+        }
+    }
+    
+    ._lazy-nav-subitem {
+        @apply relative overflow-hidden flex justify-start items-center rounded-lg py-1 px-3 min-h-9 w-full select-none text-gray-600 dark:text-gray-500 mb-1 hover:bg-gray-500/[0.08] hover:dark:bg-gray-500/[0.08] focus:outline-none;
+        
+        &:focus {
+            @apply bg-gray-500/[0.08] dark:bg-gray-500/[0.08];
+        }
+    
+        &.is-active {
+            @apply text-gray-800 dark:text-white;
+    
+            ._lazy-nav-dot {
+                &::before {
+                    @apply bg-primary-500 dark:bg-primary-300 p-[3px];
+                }
+            }
+        }
+    
+        ._lazy-nav-dot {
+            @apply mr-3 w-[1.25em] text-lg flex items-center justify-center;
+    
+            &::before {
+                @apply inline-block content-[''] h-1 w-1 rounded-full bg-gray-600 dark:bg-gray-500;
+            }
+        }
+            
+        ._lazy-nav-label {
+            @apply text-sm font-semibold line-clamp-1;
+        }
+    }
+}
+    

@@ -1,0 +1,66 @@
+@layer components {
+    ._lazy-offcanvas {
+        @apply relative z-50 visible;
+
+        &.is-active {
+            @apply visible;
+
+            ._lazy-offcanvas-backdrop {
+                @apply visible opacity-100;
+            }
+            
+            ._lazy-offcanvas-content {
+                @apply translate-x-0 flex visible;
+            }
+        }
+
+        ._lazy-offcanvas-backdrop {
+            @apply fixed inset-0 bg-gray-900/60 invisible opacity-0;
+
+            &.offcanvas-transparent {
+                @apply bg-transparent;
+            }
+    
+            &.offcanvas-blur {
+                @apply backdrop-blur-[2px];
+            }
+        }
+    }
+
+
+    ._lazy-offcanvas-content {
+        @apply fixed invisible shadow-lg dark:shadow-[0_0_33px_31px_rgba(0,0,0,0.24)] flex flex-col bg-white dark:bg-gray-900 inset-y-0 right-0 translate-x-full w-72 max-w-full h-full;
+
+        &.offcanvas-gradient {
+            @apply bg-gradient bg-white/80 dark:bg-gray-900/90;
+        }
+
+        &.offcanvas-left {
+            @apply inset-y-0 left-0 -translate-x-full w-72 max-w-full h-full;
+        }
+
+        &.offcanvas-top {
+            @apply inset-x-0 top-0 -translate-y-full w-full h-72 max-h-full translate-x-0 inset-y-auto;
+        }
+
+        &.offcanvas-bottom {
+            @apply inset-x-0 bottom-0 translate-y-full w-full h-72 max-h-full translate-x-0 inset-y-auto;
+        }
+        
+        ._lazy-offcanvas-header {
+            @apply flex flex-row justify-between items-center px-5 border-b border-dashed py-5 text-gray-900 dark:text-white border-gray-500/20;
+
+            ._lazy-offcanvas-title {
+                @apply font-bold text-lg;
+            }
+        }
+        
+        ._lazy-offcanvas-body {
+            @apply p-5 h-full overflow-y-auto dark:text-white;
+        }
+        
+        ._lazy-offcanvas-footer {
+            @apply p-5 w-full dark:text-white;
+        }
+    }
+}
