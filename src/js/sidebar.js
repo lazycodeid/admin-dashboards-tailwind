@@ -5,10 +5,13 @@ if(simplebar) {
     const simplebar_backdrop = simplebar.querySelector("[lazy-simplebar-backdrop]");
     const simplebar_body = simplebar.querySelector("[lazy-simplebar-content]");
 
-    simplebar_backdrop.classList.add("opacity-0", "hidden", "transition-opacity", "duration-300");  
+    simplebar_backdrop.style.opacity = 0;
+    simplebar_backdrop.style.display = "hidden";
+    simplebar_backdrop.style.transition = "opacity 300ms"
+    
+    simplebar_body.style.transition = "transform 300ms"
+    
     simplebar_backdrop.addEventListener("click", toggleSidebar);
-    simplebar_body.classList.add("transition-transform", "duration-300", "md:translate-x-0", "-translate-x-full")
-
     document.querySelectorAll("[lazy-simplebar-toggle]").forEach((element) => {
         element.addEventListener("click", toggleSidebar)
     })
@@ -17,27 +20,21 @@ if(simplebar) {
         if(isOpen) {
             document.removeEventListener("keyup", escapeKey);
 
-            simplebar_backdrop.classList.remove("opacity-100")
-            simplebar_backdrop.classList.add("opacity-0")
+            simplebar_backdrop.style.opacity = 0;
             setTimeout(() => {
-                simplebar_backdrop.classList.add('hidden')
+                simplebar_backdrop.style.display = "hidden";
             }, 300)
-            
-            simplebar_body.classList.remove('translate-x-0')
-            simplebar_body.classList.add('-translate-x-full')
+            simplebar_body.classList.remove("is-active")
 
             window.lazyDisableScrollbar(false)
         } else {
             document.addEventListener("keyup", escapeKey);
             
-            simplebar_backdrop.classList.remove("hidden")
+            simplebar_backdrop.style.display = "block"
             setTimeout(() => {
-                simplebar_backdrop.classList.remove('opacity-0')
-                simplebar_backdrop.classList.add('opacity-100')
+                simplebar_backdrop.style.opacity = 1
             }, 0)
-
-            simplebar_body.classList.remove('-translate-x-full')
-            simplebar_body.classList.add('translate-x-0')
+            simplebar_body.classList.add("is-active")
             window.lazyDisableScrollbar(true)
         }
         isOpen = !isOpen

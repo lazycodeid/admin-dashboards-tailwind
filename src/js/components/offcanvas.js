@@ -10,17 +10,21 @@ document.querySelectorAll("[lazy-offcanvas]").forEach(offcanvas => {
 
     const key = offcanvas.getAttribute("lazy-offcanvas")
     const buttons = document.querySelectorAll(`[lazy-offcanvas-toggle=${key}]`)
-    const backdrop = offcanvas.querySelector("._lazy-offcanvas-backdrop")
-    const content = offcanvas.querySelector("._lazy-offcanvas-content")
+    const backdrop = offcanvas.querySelector("._lazy-offcanvas-backdrop") ?? offcanvas.querySelector("[x-backdrop]");
+    const content = offcanvas.querySelector("._lazy-offcanvas-content") || offcanvas.querySelector("[x-content]");
     const enableScroll = offcanvas.getAttribute("lazy-offcanvas-scroll")
     let isOpen = offcanvas.classList.contains("is-active");
 
     // setup default transition
     backdrop.style.transition = "opacity " + def.transitionDuration + "ms " + def.transitionTimingFunction
+    backdrop.style.position = "fixed";
+    backdrop.style.visibility = "hidden";
+    backdrop.style.inset = "0px";
+    backdrop.style.opacity = 0;
     content.style.transition = "transform " + def.transitionDuration + "ms " + def.transitionTimingFunction
 
     // action handlers
-    offcanvas.querySelector("._lazy-offcanvas-backdrop").addEventListener("click",() => { toggle(false) })
+    backdrop.addEventListener("click",() => { toggle(false) })
     buttons.forEach(button => button.addEventListener("click", toggle))
 
     offcanvasMap.set(key, {
