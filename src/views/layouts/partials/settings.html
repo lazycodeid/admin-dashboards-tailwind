@@ -3,18 +3,42 @@
     <div class="_lazy-offcanvas-content offcanvas-gradient">
         <div class="_lazy-offcanvas-header">
             <h3 class="_lazy-offcanvas-title">Settings</h3>
-            <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+            <div>
+                <button lazy-settings-restart class="btn-circle btn-md" lazy-icon="fa-duotone fa-rotate-right"><span class="btn-dot"></span></button>
+                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+            </div>
         </div>
         <div class="_lazy-offcanvas-body">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci vero tenetur iure commodi soluta perspiciatis mollitia, odit quam quo alias praesentium eaque ab rerum repellendus, dolor numquam, vel harum velit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci vero tenetur iure commodi soluta perspiciatis mollitia, odit quam quo alias praesentium eaque ab rerum repellendus, dolor numquam, vel harum velit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci vero tenetur iure commodi soluta perspiciatis mollitia, odit quam quo alias praesentium eaque ab rerum repellendus, dolor numquam, vel harum velit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci vero tenetur iure commodi soluta perspiciatis mollitia, odit quam quo alias praesentium eaque ab rerum repellendus, dolor numquam, vel harum velit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci vero tenetur iure commodi soluta perspiciatis mollitia, odit quam quo alias praesentium eaque ab rerum repellendus, dolor numquam, vel harum velit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci vero tenetur iure commodi soluta perspiciatis mollitia, odit quam quo alias praesentium eaque ab rerum repellendus, dolor numquam, vel harum velit.</p>
+            <div class="_lazy-settings-label">Sidebar</div>
+            <div class="_lazy-settings-widget-wrapper grid-2">
+                <button type="button" lazy-settings-sidebar="default" class="_lazy-settings-widget">
+                    <i class="fa-duotone fa-sidebar"></i>
+                    <span>default</span>
+                </button>
+                <button type="button" lazy-settings-sidebar="v2" class="_lazy-settings-widget">
+                    <i class="fa-duotone fa-sidebar"></i>
+                    <span>v2</span>
+                </button>
+            </div>
+
+            <div class="_lazy-settings-label">Mode</div>
+            <div class="_lazy-settings-widget-wrapper grid-3">
+                <button type="button" lazy-theme-toggle="light" class="_lazy-settings-widget">
+                    <i class="fa-duotone fa-brightness-low"></i>
+                </button>
+                <button type="button" lazy-theme-toggle="dark" class="_lazy-settings-widget">
+                    <i class="fa-duotone fa-clouds-moon"></i>
+                </button>
+                <button type="button" lazy-theme-toggle="auto" class="_lazy-settings-widget">
+                    <i class="fa-duotone fa-window"></i>
+                </button>
+            </div>
         </div>
         <div class="_lazy-offcanvas-footer">
-            footer
+            <button class="_lazy-settings-btn-fullscreen">
+                <i class="fa-duotone fa-expand"></i>
+                FullScreen
+            </button>
         </div>
     </div>
 </div>

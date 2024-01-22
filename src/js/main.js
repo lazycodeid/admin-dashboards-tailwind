@@ -9,7 +9,7 @@ window.lazyDisableScrollbar = (status = true) => {
         if(document.body.scrollHeight > window.innerHeight){
             document.body.classList.add("_lazy-disable-scroll", "with-pr");
         } else {
-            document.body.classList.remove("_lazy-disable-scroll");
+            document.body.classList.add("_lazy-disable-scroll");
         }
     }else{
         document.body.classList.remove("_lazy-disable-scroll", "with-pr");

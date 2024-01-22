@@ -1,0 +1,46 @@
+@layer components {
+    ._lazy-settings-btn-fullscreen {
+        @apply relative flex justify-center items-center gap-x-2 text-sm w-full border border-dashed rounded-lg text-gray-500 border-gray-500/35 py-2.5 focus:outline-none;
+    }
+
+    ._lazy-settings-widget-wrapper {
+        @apply grid mb-6;
+
+        &.grid-2 {
+            @apply grid-cols-2 gap-4;
+
+            ._lazy-settings-widget, ._lazy-settings-sidebar {
+                @apply h-[85px] max-h-full;
+            }
+        }
+
+        &.grid-3 {
+            @apply grid-cols-3 gap-2;
+
+            ._lazy-settings-widget, ._lazy-settings-sidebar {
+                @apply h-16 max-h-full;
+            }
+        }
+
+        ._lazy-settings-widget {
+            @apply relative overflow-hidden flex justify-center items-center w-full h-16 rounded-lg border border-gray-500/10 text-gray-500/80 text-lg appearance-none select-none flex-col gap-y-2;
+            
+            &:focus {
+                @apply bg-gray-500/10 border-none ring-0 outline-none;
+            }
+
+            &.is-active {
+                @apply bg-white/80 dark:bg-gray-800 text-primary-500;
+            }
+
+            span {
+                @apply text-xs font-semibold;
+            }
+        }
+
+    }
+
+    ._lazy-settings-label {
+        @apply text-xs font-semibold mb-3 text-gray-500 dark:text-gray-600;
+    }
+}

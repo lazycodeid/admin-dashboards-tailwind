@@ -1,9 +1,11 @@
 @use "tailwind";
 @use "main";
 
-@use "components/sidebar";
-@use "components/scrollbar";
-@use "components/header";
+@use "sidebar";
+@use "scrollbar";
+@use "header";
+@use "settings";
+
 @use "components/badge";
 @use "components/offcanvas";
 @use "components/button";

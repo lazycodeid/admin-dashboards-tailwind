@@ -24,8 +24,7 @@ document.querySelectorAll("[lazy-offcanvas]").forEach(offcanvas => {
     buttons.forEach(button => button.addEventListener("click", toggle))
 
     offcanvasMap.set(key, {
-        toggle,
-        isOpen
+        toggle
     })
 
     function toggle(show) {

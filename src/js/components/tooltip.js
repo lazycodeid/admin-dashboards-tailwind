@@ -15,7 +15,16 @@ document.querySelectorAll("[lazy-tooltip]").forEach((element) => {
             tooltip.remove();
         },300)
     });
+
 });
+
+function debounce(func, wait) {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => { func.apply(this, args); }, wait);
+    }
+}
 
 function positionTooltip(targetElement, tooltipElement) {
     const targetRect = targetElement.getBoundingClientRect();
