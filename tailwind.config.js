@@ -43,7 +43,7 @@ module.exports = {
           400: '#B76E00',
           500: '#7A4100'
         },
-        'error' : {
+        'danger' : {
           100: '#FFE9D5',
           200: '#FFAC82',
           300: '#FF5630',

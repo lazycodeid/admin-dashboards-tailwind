@@ -1,0 +1,21 @@
+ $colors-light: (
+    'primary': theme('colors.primary.500'),
+    'secondary': theme('colors.secondary.200'),
+    'success': theme('colors.success.200'),
+    'info': theme('colors.info.200'),
+    'warning': theme('colors.warning.200'),
+    'danger': theme('colors.danger.300'),
+    'light': theme('colors.white'),
+    'dark': theme('colors.gray.900'),
+ );
+
+ $colors-dark: (
+    'primary': theme('colors.primary.500'),
+    'secondary': theme('colors.secondary.200'),
+    'success': theme('colors.success.200'),
+    'info': theme('colors.info.200'),
+    'warning': theme('colors.warning.200'),
+    'danger': theme('colors.danger.300'),
+    'light': theme('colors.white'),
+    'dark': theme('colors.white'),
+ );

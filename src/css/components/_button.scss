@@ -98,11 +98,11 @@
     }
     
     .btn-badge {
-        @apply absolute z-[1] flex p-1 text-xs h-5 min-w-5 bg-error-300 text-white rounded-full justify-center items-center right-0 top-0;
+        @apply absolute z-[1] flex p-1 text-xs h-5 min-w-5 bg-danger-300 text-white rounded-full justify-center items-center right-0 top-0;
     }
     
     .btn-dot {
-        @apply absolute z-[1] flex p-1 bg-error-300 text-white rounded-full justify-center items-center right-1 top-1 animate-pulse;
+        @apply absolute z-[1] flex p-1 bg-danger-300 text-white rounded-full justify-center items-center right-1 top-1 animate-pulse;
     }
     
     &.btn-scale {
