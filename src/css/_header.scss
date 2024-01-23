@@ -27,7 +27,7 @@
         @apply relative inline-flex items-center justify-center p-2 focus:outline-0 rounded-full text-gray-500 w-10 h-10 bg-gray-500/[0.08] hover:scale-105 active:scale-95 transition-transform;
 
         &.is-active {
-            @apply bg-primary-400;
+            @apply bg-primary-200;
         }
 
         ._lazy-avatar-wrapper {

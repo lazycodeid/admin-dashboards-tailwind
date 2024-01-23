@@ -14,7 +14,7 @@
 }
     
 
-:is([data-theme="dark"]) {
+:is([theme-mode="dark"]) {
     ::-webkit-scrollbar-thumb {
         @apply bg-gray-800;
         border-radius: 8px;

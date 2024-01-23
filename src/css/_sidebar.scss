@@ -61,7 +61,7 @@
         }
     
         &.is-active {
-            @apply text-primary-500 hover:bg-primary-500/20 dark:text-primary-300 bg-primary-500/10 #{!important};
+            @apply text-primary-300 dark:text-primary-200 hover:bg-primary-300/15 bg-primary-300/10 #{!important};
             
             ._lazy-nav-arrow {
                 @apply rotate-90;
@@ -107,11 +107,11 @@
         }
     
         &.is-active {
-            @apply text-gray-800 dark:text-white;
+            @apply text-gray-700 dark:text-white;
     
             ._lazy-nav-dot {
                 &::before {
-                    @apply bg-primary-500 dark:bg-primary-300 p-[3px];
+                    @apply bg-primary-200 dark:bg-primary-300 p-[3px];
                 }
             }
         }

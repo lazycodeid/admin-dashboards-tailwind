@@ -7,7 +7,8 @@ let settings = {
         } catch {
             localStorage.setItem('lazy-settings', JSON.stringify({
                 themeMode : 'auto',
-                themeSidebar : 'default'
+                themeSidebar : 'default',
+                themeColor : 'success',
             }))
         }
         value = JSON.parse(localStorage.getItem('lazy-settings'))
@@ -22,7 +23,8 @@ let settings = {
     },
     validate : {
         themeMode : ['auto', 'light', 'dark'],
-        themeSidebar : ['default', 'v2']
+        themeSidebar : ['default', 'v2'],
+        themeColor : ['success', 'indigo', 'info', 'warning', 'danger']
     }
 }
 
@@ -45,7 +47,7 @@ function toggleTheme(ctheme = 'auto') {
     settings.set("themeMode", settings.validate.themeMode.includes(ctheme) ? ctheme : 'auto')
     document.querySelector("._lazy-settings-widget-wrapper button[lazy-theme-toggle].is-active")?.classList.remove("is-active");
     document.querySelector(`._lazy-settings-widget-wrapper button[lazy-theme-toggle="${settings.get("themeMode")}"]`)?.classList.add("is-active");
-    document.querySelector("html").setAttribute('data-theme', settings.get("themeMode") == 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : settings.get("themeMode"));
+    document.querySelector("html").setAttribute('theme-mode', settings.get("themeMode") == 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : settings.get("themeMode"));
 }
 
 // press ctrl + d
@@ -85,9 +87,54 @@ document.querySelectorAll("[lazy-settings-sidebar]").forEach((element) => {
 })
 // sidebar handler end
 
+
+// color preset start
+
+
+
+const colorPreset = document.querySelector("[lazy-settins-colors]")
+if(colorPreset) {
+    const preset = settings.validate.themeColor
+    const bg = ["bg-success-300", "bg-indigo-300", "bg-info-300", "bg-warning-300", "bg-danger-300"]
+
+    preset.forEach((element, index) => {
+        const div = document.createElement("button");
+        div.classList.add("_lazy-settings-widget");
+        div.type = "button";
+        div.attributes.setNamedItem(document.createAttribute(`lazy-settings-color`));
+        div.attributes.getNamedItem(`lazy-settings-color`).value = element;
+
+        const circle = document.createElement("div");
+        circle.classList.add("color-preset", `${bg[index]}`);
+        div.appendChild(circle);
+        
+        colorPreset.appendChild(div);
+    })
+
+    document.querySelectorAll("[lazy-settings-color]").forEach((element) => {
+        element.addEventListener("click", () => {
+            toggleColor(element.getAttribute("lazy-settings-color"))
+        })
+    })
+
+    toggleColor(settings.get("themeColor"));
+
+    function toggleColor(preset) {
+        document.querySelectorAll("[lazy-settings-color].is-active").forEach((element) => {
+            element.classList.remove("is-active")
+        })
+        document.querySelector(`[lazy-settings-color="${preset}"]`).classList.add("is-active");
+        settings.set("themeColor", settings.validate.themeColor.includes(preset) ? preset : 'success')
+        document.querySelector("html").setAttribute('theme-color', settings.get("themeColor"));
+    }
+}
+// color preset end
+
+
 // restart start
 document.querySelector("[lazy-settings-restart]")?.addEventListener("click", () => {
     toggleTheme("auto");
     toggleVersionSidebar("default");
+    toggleColor("success");
 })
 // restart end
