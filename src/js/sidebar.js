@@ -6,7 +6,7 @@ if(simplebar) {
     const simplebar_body = simplebar.querySelector("[lazy-simplebar-content]");
 
     simplebar_backdrop.style.opacity = 0;
-    simplebar_backdrop.style.display = "hidden";
+    simplebar_backdrop.style.display = "none";
     simplebar_backdrop.style.transition = "opacity 300ms"
     
     simplebar_body.style.transition = "transform 300ms"
@@ -22,7 +22,7 @@ if(simplebar) {
 
             simplebar_backdrop.style.opacity = 0;
             setTimeout(() => {
-                simplebar_backdrop.style.display = "hidden";
+                simplebar_backdrop.style.display = "none";
             }, 300)
             simplebar_body.classList.remove("is-active")
 
