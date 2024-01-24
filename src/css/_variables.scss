@@ -20,7 +20,4 @@ $colors-component-mix: (
    'dark': theme('colors.white'),
 );
 
-$prefix-var: 'lazy-';
-$prefix-class: '_lazy-';
-
 $color-preset: ('success', 'indigo', 'info', 'warning', 'danger');

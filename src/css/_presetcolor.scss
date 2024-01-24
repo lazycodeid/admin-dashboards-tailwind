@@ -1,6 +1,6 @@
 @use "variables";
 
-$prefix: variables.$prefix-var;
+$prefix: "lazy-";
 
 @layer base {
    :root {
@@ -8,7 +8,7 @@ $prefix: variables.$prefix-var;
       @each $key, $value in variables.$color-preset {
          &[theme-color="#{$key}"] {
             @each $i in (100, 200, 300, 400, 500) {
-               --#{$prefix}color-primary-#{$i}: var(--lazy-color-#{$key}-#{$i});
+               --#{$prefix}color-primary-#{$i}: var(--#{$prefix}color-#{$key}-#{$i});
             }
          }
       }

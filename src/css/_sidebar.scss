@@ -3,7 +3,7 @@
         @apply relative flex-shrink-0 w-[280px];
     
         ._lazy-simplebar-backdrop {
-            @apply fixed w-full h-full bg-gray-900/80 z-40;
+            @apply fixed w-full h-full bg-gray-900/80 z-40 hidden;
             @apply md:hidden #{!important};
         }
         
