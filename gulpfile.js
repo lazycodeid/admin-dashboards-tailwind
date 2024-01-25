@@ -7,6 +7,7 @@ const sass = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const postcss = require('gulp-postcss');
 const clean = require('gulp-clean');
+const imagemin = require('gulp-imagemin');
 
 const webpack = require('webpack-stream');
 
@@ -122,6 +123,7 @@ gulp.task("dev-img", () => {
 
 gulp.task("build-img", () => {
     return gulp.src("./src/img/**/*")
+        .pipe(imagemin())
         .pipe(gulp.dest("./build/assets/img"));
 })
 
