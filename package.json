@@ -10,6 +10,7 @@
   "author": "ilsyaa",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^3.0.2",
@@ -19,10 +20,10 @@
     "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
-    "tailwindcss": "^3.4.1",
-    "gulp-imagemin": "^5.0.3"
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "sass": "^1.69.7",

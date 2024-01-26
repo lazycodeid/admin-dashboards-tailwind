@@ -1,23 +1,36 @@
 $colors-component: (
-   'primary': theme('colors.primary.500'),
-   'indigo': theme('colors.indigo.200'),
-   'success': theme('colors.success.200'),
-   'info': theme('colors.info.200'),
-   'warning': theme('colors.warning.200'),
-   'danger': theme('colors.danger.300'),
-   'light': theme('colors.white'),
-   'dark': theme('colors.gray.900'),
-);
-
-$colors-component-mix: (
-   'primary': theme('colors.white'),
-   'secondary': theme('colors.white'),
-   'success': theme('colors.white'),
-   'info': theme('colors.white'),
-   'warning': theme('colors.white'),
-   'danger': theme('colors.white'),
-   'light': theme('colors.gray.900'),
-   'dark': theme('colors.white'),
+   'primary': (
+      'bg': theme('colors.primary.300'),
+      'mix': theme('colors.white'),
+   ),
+   'indigo': (
+      'bg': theme('colors.indigo.300'),
+      'mix': theme('colors.white'),
+   ),
+   'success': (
+      'bg': theme('colors.success.300'),
+      'mix': theme('colors.white'),
+   ),
+   'info': (
+      'bg': theme('colors.info.300'),
+      'mix': theme('colors.white'),
+   ),
+   'warning': (
+      'bg': theme('colors.warning.300'),
+      'mix': theme('colors.white'),
+   ),
+   'danger': (
+      'bg': theme('colors.danger.300'),
+      'mix': theme('colors.white'),
+   ),
+   'light': (
+      'bg': theme('colors.white'),
+      'mix': theme('colors.gray.900'),
+   ),
+   'dark': (
+      'bg': theme('colors.gray.800'),
+      'mix': theme('colors.white'),
+   ),
 );
 
 $color-preset: ('success', 'indigo', 'info', 'warning', 'danger');

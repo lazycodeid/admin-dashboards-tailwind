@@ -1,0 +1,27 @@
+@use "variables";
+
+@layer components {
+    ._lazy-card {
+        @apply relative block overflow-hidden text-gray-900 dark:text-white rounded-lg bg-white dark:bg-gray-800 w-full text-wrap min-h-0;
+
+        ._lazy-card-img {
+            @apply aspect-w-10 aspect-h-6 overflow-hidden;
+
+            img {
+                @apply object-cover object-center h-full w-full;
+            }
+        }
+
+        ._lazy-card-body {
+            @apply p-4 w-full;
+        }
+
+        // variants color
+        @each $color, $value in variables.$colors-component {
+            &.card-#{$color} {
+                background-color: map-get($map: $value, $key: 'bg');
+                color: map-get($map: $value, $key: 'mix');
+            }
+        }
+    }
+}

@@ -1,0 +1,354 @@
+@@include("./layouts/start.html", {
+    "title": "Lazy - Blank Page"
+})
+<link rel="stylesheet" href="assets/vendor/highlight/styles/github-dark.min.css">
+
+<div class="_lazy-root">
+    @@include("./layouts/partials/sidebar.html")
+    <main class="_lazy-main">
+        @@include("./layouts/partials/header.html")
+        <div class="_lazy-container-sm">
+
+            <div class="mb-3 font-bold text-2xl text-gray-900 dark:text-white">Card Components</div>
+
+            <div class="relative mb-5">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300 dark:border-gray-800"></div>
+                </div>
+                <div class="relative flex justify-center">
+                    <span class="bg-gray-200 dark:bg-gray-900 px-2 text-sm text-gray-500">Blog Cards</span>
+                </div>
+            </div>
+
+            <section class="mb-10" lazy-ui>
+                <div class="flex flex-row flex-wrap gap-2 mb-4">
+                    <button type="button" lazy-ui-button class="px-3 py-2 text-xs font-semibold rounded-lg bg-gray-900 dark:bg-gray-50 dark:text-gray-900 text-gray-300 flex items-center justify-center gap-x-2"><i class="fa-duotone fa-code"></i>View</button>
+                    <button type="button" lazy-ui-copy data-clipboard-text="-" class="px-3 py-2 text-xs font-semibold rounded-lg bg-gray-900 dark:bg-gray-50 dark:text-gray-900 text-gray-300 flex items-center justify-center gap-x-2"><i class="fa-duotone fa-copy"></i>Copy</button>
+                </div>
+                <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                    <pre><code class="language-html rounded-lg">&lt;div class=&quot;grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5&quot;&gt;
+    &lt;div class=&quot;_lazy-card&quot;&gt;
+        &lt;div class=&quot;_lazy-card-body !p-2&quot;&gt;
+            &lt;div class=&quot;_lazy-card-img rounded-lg&quot;&gt;
+                &lt;img src=&quot;assets/img/thumbnails/1.jpg&quot; alt=&quot;cover&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;mt-2 p-1 flex flex-col gap-y-2&quot;&gt;
+                &lt;div class=&quot;flex flex-row flex-wrap gap-x-2 items-center&quot;&gt;
+                    &lt;div class=&quot;text-xs font-light text-gray-500&quot;&gt;1 week ago&lt;/div&gt;
+                    &lt;div class=&quot;flex flex-row flex-wrap gap-x-1&quot;&gt;
+                        &lt;span class=&quot;text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg&quot;&gt;News&lt;/span&gt;
+                        &lt;span class=&quot;text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg&quot;&gt;Lazy&lt;/span&gt;
+                        &lt;span class=&quot;text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg&quot;&gt;...&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;a href=&quot;#&quot; class=&quot;line-clamp-1 font-bold&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/a&gt;
+                &lt;div class=&quot;text-sm line-clamp-2&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia perspiciatis voluptatibus sequi officia voluptatem libero consequatur, explicabo quam suscipit aspernatur soluta sint, officiis amet. Explicabo laboriosam earum facere nesciunt est.&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    ...
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div class="w-full overflow-hidden rounded-lg flex justify-center" lazy-ui-preview>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div class="_lazy-card">
+                            <div class="_lazy-card-body !p-2">
+                                <div class="_lazy-card-img rounded-lg">
+                                    <img src="assets/img/thumbnails/1.jpg" alt="cover">
+                                </div>
+                                <div class="mt-2 p-1 flex flex-col gap-y-2">
+                                    <div class="flex flex-row flex-wrap gap-x-2 items-center">
+                                        <div class="text-xs font-light text-gray-500">1 week ago</div>
+                                        <div class="flex flex-row flex-wrap gap-x-1">
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">News</span>
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">Lazy</span>
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">...</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="line-clamp-1 font-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    <div class="text-sm line-clamp-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia perspiciatis voluptatibus sequi officia voluptatem libero consequatur, explicabo quam suscipit aspernatur soluta sint, officiis amet. Explicabo laboriosam earum facere nesciunt est.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_lazy-card">
+                            <div class="_lazy-card-body !p-2">
+                                <div class="_lazy-card-img rounded-lg">
+                                    <img src="assets/img/thumbnails/1.jpg" alt="cover">
+                                </div>
+                                <div class="mt-2 p-1 flex flex-col gap-y-2">
+                                    <div class="flex flex-row flex-wrap gap-x-2 items-center">
+                                        <div class="text-xs font-light text-gray-500">1 week ago</div>
+                                        <div class="flex flex-row flex-wrap gap-x-1">
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">News</span>
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">Lazy</span>
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">...</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="line-clamp-1 font-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    <div class="text-sm line-clamp-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia perspiciatis voluptatibus sequi officia voluptatem libero consequatur, explicabo quam suscipit aspernatur soluta sint, officiis amet. Explicabo laboriosam earum facere nesciunt est.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_lazy-card">
+                            <div class="_lazy-card-body !p-2">
+                                <div class="_lazy-card-img rounded-lg">
+                                    <img src="assets/img/thumbnails/1.jpg" alt="cover">
+                                </div>
+                                <div class="mt-2 p-1 flex flex-col gap-y-2">
+                                    <div class="flex flex-row flex-wrap gap-x-2 items-center">
+                                        <div class="text-xs font-light text-gray-500">1 week ago</div>
+                                        <div class="flex flex-row flex-wrap gap-x-1">
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">News</span>
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">Lazy</span>
+                                            <span class="text-xs bg-info-300/20 text-info-300 px-1.5 py-0.5 rounded-lg">...</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="line-clamp-1 font-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                                    <div class="text-sm line-clamp-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia perspiciatis voluptatibus sequi officia voluptatem libero consequatur, explicabo quam suscipit aspernatur soluta sint, officiis amet. Explicabo laboriosam earum facere nesciunt est.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <div class="relative mb-5">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300 dark:border-gray-800"></div>
+                </div>
+                <div class="relative flex justify-center">
+                    <span class="bg-gray-200 dark:bg-gray-900 px-2 text-sm text-gray-500">Like Github thumbnails</span>
+                </div>
+            </div>
+
+            <section class="mb-10" lazy-ui>
+                <div class="flex flex-row flex-wrap gap-2 mb-4">
+                    <button type="button" lazy-ui-button class="px-3 py-2 text-xs font-semibold rounded-lg bg-gray-900 dark:bg-gray-50 dark:text-gray-900 text-gray-300 flex items-center justify-center gap-x-2"><i class="fa-duotone fa-code"></i>View</button>
+                    <button type="button" lazy-ui-copy data-clipboard-text="-" class="px-3 py-2 text-xs font-semibold rounded-lg bg-gray-900 dark:bg-gray-50 dark:text-gray-900 text-gray-300 flex items-center justify-center gap-x-2"><i class="fa-duotone fa-copy"></i>Copy</button>
+                </div>
+
+                <div class="w-full overflow-hidden rounded-lg" lazy-ui-preview>
+                    <div class="flex justify-center">
+                        <a href="#" class="relative block overflow-hidden rounded-lg border bg-white dark:bg-gray-800 dark:border-none border-gray-100 p-4 sm:p-6 lg:p-8">
+                            <span class="absolute animate-gradient inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+                        
+                            <div class="flex justify-between flex-row-reverse md:flex-row gap-4">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900 dark:text-white sm:text-xl">Building a SaaS product as a software developer</h3>
+                                    <p class="mt-1 text-xs font-medium text-gray-500">By Ilsya</p>
+                                </div>
+                        
+                                <div class="shrink-0">
+                                    <img alt="Ilsya" src="assets/img/avatar/2.jpg" class="h-16 w-16 rounded-lg object-cover shadow-sm" />
+                                </div>
+                            </div>
+                        
+                            <div class="mt-4 max-w-[40ch] text-sm text-gray-500">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. At velit illum provident a, ipsa
+                                maiores deleniti consectetur nobis et eaque.
+                            </div>
+                        
+                            <dl class="mt-6 flex gap-6">
+                                <div class="flex flex-col-reverse">
+                                    <dt class="text-sm font-medium text-gray-600 dark:text-gray-400">Published</dt>
+                                    <dd class="text-xs text-gray-500">31st June, 2024</dd>
+                                </div>
+                                <div class="flex flex-col-reverse">
+                                    <dt class="text-sm font-medium text-gray-600 dark:text-gray-400">Reading time</dt>
+                                    <dd class="text-xs text-gray-500">3 minute</dd>
+                                </div>
+                            </dl>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                    <pre><code class="language-html rounded-lg">&lt;a href=&quot;#&quot; class=&quot;relative block overflow-hidden rounded-lg border bg-white dark:bg-gray-800 dark:border-none border-gray-100 p-4 sm:p-6 lg:p-8&quot;&gt;
+    &lt;span class=&quot;absolute animate-gradient inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600&quot;&gt;&lt;/span&gt;
+
+    &lt;div class=&quot;flex justify-between flex-row-reverse md:flex-row gap-4&quot;&gt;
+        &lt;div&gt;
+            &lt;h3 class=&quot;text-lg font-bold text-gray-900 dark:text-white sm:text-xl&quot;&gt;Building a SaaS product as a software developer&lt;/h3&gt;
+            &lt;p class=&quot;mt-1 text-xs font-medium text-gray-500&quot;&gt;By Ilsya&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;shrink-0&quot;&gt;
+            &lt;img alt=&quot;Ilsya&quot; src=&quot;assets/img/avatar/2.jpg&quot; class=&quot;h-16 w-16 rounded-lg object-cover shadow-sm&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;mt-4 max-w-[40ch] text-sm text-gray-500&quot;&gt;
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At velit illum provident a, ipsa
+        maiores deleniti consectetur nobis et eaque.
+    &lt;/div&gt;
+
+    &lt;dl class=&quot;mt-6 flex gap-6&quot;&gt;
+        &lt;div class=&quot;flex flex-col-reverse&quot;&gt;
+            &lt;dt class=&quot;text-sm font-medium text-gray-600 dark:text-gray-400&quot;&gt;Published&lt;/dt&gt;
+            &lt;dd class=&quot;text-xs text-gray-500&quot;&gt;31st June, 2024&lt;/dd&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;flex flex-col-reverse&quot;&gt;
+            &lt;dt class=&quot;text-sm font-medium text-gray-600 dark:text-gray-400&quot;&gt;Reading time&lt;/dt&gt;
+            &lt;dd class=&quot;text-xs text-gray-500&quot;&gt;3 minute&lt;/dd&gt;
+        &lt;/div&gt;
+    &lt;/dl&gt;
+&lt;/a&gt;</code></pre>
+                </div>
+            </section>
+
+            <div class="relative mb-5">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300 dark:border-gray-800"></div>
+                </div>
+                <div class="relative flex justify-center">
+                    <span class="bg-gray-200 dark:bg-gray-900 px-2 text-sm text-gray-500">Style variation</span>
+                </div>
+            </div>
+
+            <section class="mb-10" lazy-ui>
+                <div class="flex flex-row flex-wrap gap-2 mb-4">
+                    <button type="button" lazy-ui-button class="px-3 py-2 text-xs font-semibold rounded-lg bg-gray-900 dark:bg-gray-50 dark:text-gray-900 text-gray-300 flex items-center justify-center gap-x-2"><i class="fa-duotone fa-code"></i>View</button>
+                    <button type="button" lazy-ui-copy data-clipboard-text="-" class="px-3 py-2 text-xs font-semibold rounded-lg bg-gray-900 dark:bg-gray-50 dark:text-gray-900 text-gray-300 flex items-center justify-center gap-x-2"><i class="fa-duotone fa-copy"></i>Copy</button>
+                </div>
+
+                <div class="w-full overflow-hidden rounded-lg" lazy-ui-preview>
+                    <div class="flex justify-center">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <div class="_lazy-card card-primary">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Primary</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-indigo">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">indigo</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-success">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Success</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-info">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Info</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-warning">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Warning</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-danger">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Danger</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-dark">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Dark</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                            <div class="_lazy-card card-light">
+                                <div class="_lazy-card-body">
+                                    <div class="font-semibold">Light</div>
+                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis ea voluptatibus?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                    <pre><code class="language-html rounded-lg">&lt;!-- bg-primary --&gt;
+&lt;div class=&quot;_lazy-card card-primary&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-indigo --&gt;
+&lt;div class=&quot;_lazy-card card-indigo&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-success --&gt;
+&lt;div class=&quot;_lazy-card card-success&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-info --&gt;
+&lt;div class=&quot;_lazy-card card-info&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-warning --&gt;
+&lt;div class=&quot;_lazy-card card-warning&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-danger --&gt;
+&lt;div class=&quot;_lazy-card card-danger&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-dark --&gt;
+&lt;div class=&quot;_lazy-card card-dark&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- bg-light --&gt;
+&lt;div class=&quot;_lazy-card card-light&quot;&gt;
+    &lt;div class=&quot;_lazy-card-body&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+<script src="assets/vendor/highlight/highlight.min.js"></script>
+<script>
+    new ClipboardJS('[lazy-ui-copy]');
+    hljs.highlightAll()
+
+    document.querySelectorAll("[lazy-ui-copy]").forEach((element)=>{
+        element.addEventListener("click", ()=>{
+            let text = element.setAttribute("data-clipboard-text", element.closest("[lazy-ui]").querySelector("[lazy-ui-code]").innerText)
+            element.disabled = true
+            element.innerHTML = `<i class="fa-duotone fa-party-horn"></i> Copied`
+            setTimeout(()=>{
+                element.innerHTML = `<i class="fa-duotone fa-copy"></i> Copy`
+                element.disabled = false
+            }, 1500)
+        })
+    })
+
+    document.querySelectorAll("[lazy-ui]").forEach((element)=>{
+        const preview = element.querySelector("[lazy-ui-preview]")
+        const code = element.querySelector("[lazy-ui-code]")
+        const button = element.querySelector("[lazy-ui-button]")
+        let iscode = false
+        if(button) button.addEventListener("click", toggle)
+
+        function toggle(){
+            if(iscode){
+                preview.style.display = "block"
+                code.style.display = "none"
+            } else {
+                preview.style.display = "none"
+                code.style.display = "block"
+            }
+            iscode = !iscode
+        }
+    })
+</script>
+@@include("./layouts/end.html")

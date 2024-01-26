@@ -31,6 +31,16 @@
         }
     }
 
+    @keyframes BgGradient {
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
     // main layouts +
 
     ._lazy-root {
@@ -42,6 +52,10 @@
 
         ._lazy-container-sm {
             @apply mx-auto px-4 sm:px-6 md:px-10 max-w-7xl md:pb-20 pb-12;
+        }
+
+        ._lazy-container {
+            @apply mx-auto px-4 sm:px-6 xl:px-16 md:px-10 max-w-full md:pb-20 pb-12;
         }
     }
 
@@ -74,5 +88,16 @@
     .bg-gradient-none {
         backdrop-filter: none;
         background-image: none;
+    }
+
+    .text-muted {
+        @apply text-gray-700 dark:text-gray-300
+    }
+
+    .animate-gradient {
+        background-size: 400%;
+        -webkit-animation: BgGradient 3s ease infinite;
+        -moz-animation: BgGradient 3s ease infinite;
+        animation: BgGradient 3s ease infinite;
     }
 }
