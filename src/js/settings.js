@@ -1,15 +1,16 @@
 let settings = {
+    default : {
+        themeMode : 'auto',
+        themeSidebar : 'default',
+        themeColor : 'success',
+    },
     get : (key = '') => {
         let value;
         try {
             value = JSON.parse(localStorage.getItem('lazy-settings'))
             if(!value) throw new Error();
         } catch {
-            localStorage.setItem('lazy-settings', JSON.stringify({
-                themeMode : 'auto',
-                themeSidebar : 'default',
-                themeColor : 'success',
-            }))
+            localStorage.setItem('lazy-settings', JSON.stringify(settings.default))
         }
         value = JSON.parse(localStorage.getItem('lazy-settings'))
         if(key) return value[key]
@@ -133,8 +134,8 @@ if(colorPreset) {
 
 // restart start
 document.querySelector("[lazy-settings-restart]")?.addEventListener("click", () => {
-    toggleTheme("auto");
-    toggleVersionSidebar("default");
-    toggleColor("success");
+    toggleTheme(settings.default.themeMode);
+    toggleVersionSidebar(settings.default.themeSidebar);
+    toggleColor(settings.default.themeColor);
 })
 // restart end
