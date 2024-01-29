@@ -1,4 +1,11 @@
-/node_modules
-/dist
-/build
+node_modules
+dist
+build
+._*
+.env
+.yarn
+.yarnrc.yml
 package-lock.json
+yarn.lock
+.pnp.cjs
+.pnp.loader.mjs
