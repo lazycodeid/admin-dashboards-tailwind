@@ -5,6 +5,46 @@
     <link rel="stylesheet" href="assets/vendor/highlight/styles/github-dark.min.css">
 <!-- push-end: styles -->
 
+<!-- push-start: scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+    <script src="assets/vendor/highlight/highlight.min.js"></script>
+    <script>
+        new ClipboardJS('[lazy-ui-copy]');
+        hljs.highlightAll()
+
+        document.querySelectorAll("[lazy-ui-copy]").forEach((element)=>{
+            element.addEventListener("click", ()=>{
+                let text = element.setAttribute("data-clipboard-text", element.closest("[lazy-ui]").querySelector("[lazy-ui-code]").innerText)
+                element.disabled = true
+                element.innerHTML = `<i class="fa-duotone fa-party-horn"></i> Copied`
+                setTimeout(()=>{
+                    element.innerHTML = `<i class="fa-duotone fa-copy"></i> Copy`
+                    element.disabled = false
+                }, 1500)
+            })
+        })
+
+        document.querySelectorAll("[lazy-ui]").forEach((element)=>{
+            const preview = element.querySelector("[lazy-ui-preview]")
+            const code = element.querySelector("[lazy-ui-code]")
+            const button = element.querySelector("[lazy-ui-button]")
+            let iscode = false
+            if(button) button.addEventListener("click", toggle)
+
+            function toggle(){
+                if(iscode){
+                    preview.style.display = "block"
+                    code.style.display = "none"
+                } else {
+                    preview.style.display = "none"
+                    code.style.display = "block"
+                }
+                iscode = !iscode
+            }
+        })
+    </script>
+<!-- push-end: scripts -->
+
 <div class="_lazy-root">
     @@include("./layouts/partials/sidebar.html")
     <main class="_lazy-main">
@@ -316,41 +356,4 @@
     </main>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
-<script src="assets/vendor/highlight/highlight.min.js"></script>
-<script>
-    new ClipboardJS('[lazy-ui-copy]');
-    hljs.highlightAll()
-
-    document.querySelectorAll("[lazy-ui-copy]").forEach((element)=>{
-        element.addEventListener("click", ()=>{
-            let text = element.setAttribute("data-clipboard-text", element.closest("[lazy-ui]").querySelector("[lazy-ui-code]").innerText)
-            element.disabled = true
-            element.innerHTML = `<i class="fa-duotone fa-party-horn"></i> Copied`
-            setTimeout(()=>{
-                element.innerHTML = `<i class="fa-duotone fa-copy"></i> Copy`
-                element.disabled = false
-            }, 1500)
-        })
-    })
-
-    document.querySelectorAll("[lazy-ui]").forEach((element)=>{
-        const preview = element.querySelector("[lazy-ui-preview]")
-        const code = element.querySelector("[lazy-ui-code]")
-        const button = element.querySelector("[lazy-ui-button]")
-        let iscode = false
-        if(button) button.addEventListener("click", toggle)
-
-        function toggle(){
-            if(iscode){
-                preview.style.display = "block"
-                code.style.display = "none"
-            } else {
-                preview.style.display = "none"
-                code.style.display = "block"
-            }
-            iscode = !iscode
-        }
-    })
-</script>
 @@include("./layouts/end.html")
