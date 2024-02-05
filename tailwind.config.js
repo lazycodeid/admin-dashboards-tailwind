@@ -14,6 +14,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        'emerald': colors.emerald,
         'primary': {
           100: 'rgb(var(--lazy-color-primary-100) / <alpha-value>)',
           200: 'rgb(var(--lazy-color-primary-200) / <alpha-value>)',

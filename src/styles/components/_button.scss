@@ -1,3 +1,45 @@
+@use "variables";
+
+@each $color, $value in variables.$color-components {
+    .btn {
+        &.btn-#{$color} {
+            background-color: map-get($map: $value, $key: 'bg');
+            color: map-get($map: $value, $key: 'mix');
+        }
+    }
+    @if map-get($map: $value, $key: 'isdark') {
+        $isdark : map-get($map: $value, $key: 'isdark');
+        :is([theme-mode="dark"]) {
+            .btn {
+                &.btn-#{$color} {
+                    background-color: map-get($map: $isdark, $key: 'bg');
+                    color: map-get($map: $isdark, $key: 'mix');
+                }
+            }
+        }
+    }
+}
+
+@each $color, $value in variables.$color-label-components {
+    .btn {
+        &.btn-label-#{$color} {
+            background-color: map-get($map: $value, $key: 'bg');
+            color: map-get($map: $value, $key: 'mix');
+        }
+    }
+    @if map-get($map: $value, $key: 'isdark') {
+        $isdark : map-get($map: $value, $key: 'isdark');
+        :is([theme-mode="dark"]) {
+            .btn {
+                &.btn-label-#{$color} {
+                    background-color: map-get($map: $isdark, $key: 'bg');
+                    color: map-get($map: $isdark, $key: 'mix');
+                }
+            }
+        }
+    }
+}
+
 @keyframes ripple {
     0% {
         transform: scale(0);
@@ -8,7 +50,28 @@
         opacity: 0;
     }
 }
-        
+
+.btn {
+    @apply relative flex justify-center items-center select-none rounded-lg text-white hover:opacity-90 overflow-hidden;
+    @apply min-w-16 py-2 px-5 text-[0.9em] font-medium;
+
+    span {
+        &.ripple {
+            @apply absolute rounded-full bg-gray-400/30;
+            transform: scale(0);
+            animation: ripple 900ms ease;
+        }
+    }
+
+    &.btn-rounded {
+        @apply rounded-full;
+    }
+
+    &:disabled {
+        @apply opacity-50;
+    }
+}
+
 @keyframes ripple-circle {
     0% {
         transform: scale(0, 0);
@@ -17,18 +80,6 @@
     100% {
         transform: scale(30, 30);
         opacity: 0;
-    }
-}
-        
-.btn {
-    @apply relative inline-flex justify-center items-center select-none min-w-16 py-2 px-3 rounded-lg text-white text-base font-medium hover:opacity-90 overflow-hidden;
-
-    span {
-        &.ripple {
-            @apply absolute rounded-full bg-gray-400/30;
-            transform: scale(0);
-            animation: ripple 900ms ease;
-        }
     }
 }
 

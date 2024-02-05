@@ -17,7 +17,7 @@
         }
 
         // variants color
-        @each $color, $value in variables.$colors-component {
+        @each $color, $value in variables.$color-components {
             &.card-#{$color} {
                 background-color: map-get($map: $value, $key: 'bg');
                 color: map-get($map: $value, $key: 'mix');

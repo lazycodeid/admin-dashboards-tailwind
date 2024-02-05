@@ -1,7 +1,15 @@
-$colors-component: (
+$color-components: (
    'primary': (
       'bg': theme('colors.primary.300'),
       'mix': theme('colors.white'),
+   ),
+   'secondary': (
+      'bg': theme('colors.gray.500'),
+      'mix': theme('colors.white'),
+      'isdark': (
+         'bg': theme('colors.gray.700'),
+         'mix': theme('colors.white'),
+      )
    ),
    'indigo': (
       'bg': theme('colors.indigo.300'),
@@ -9,6 +17,10 @@ $colors-component: (
    ),
    'success': (
       'bg': theme('colors.success.200'),
+      'mix': theme('colors.white'),
+   ),
+   'emerald': (
+      'bg': theme('colors.emerald.400'),
       'mix': theme('colors.white'),
    ),
    'info': (
@@ -31,6 +43,65 @@ $colors-component: (
       'bg': theme('colors.gray.800'),
       'mix': theme('colors.white'),
    ),
+);
+
+$color-label-components: (
+   'primary': (
+      'bg': theme('colors.primary.300/0.2'),
+      'mix': theme('colors.primary.300'),
+      'isdark': (
+         'bg': theme('colors.primary.300/0.2'),
+         'mix': theme('colors.primary.200'),
+      )
+   ),
+   'indigo': (
+      'bg': theme('colors.indigo.300/.2'),
+      'mix': theme('colors.indigo.300'),
+      'isdark': (
+         'bg': theme('colors.indigo.300/.2'),
+         'mix': theme('colors.indigo.200'),
+      )
+   ),
+   'success': (
+      'bg': theme('colors.success.300/.2'),
+      'mix': theme('colors.success.300'),
+      'isdark': (
+         'bg': theme('colors.success.300/0.2'),
+         'mix': theme('colors.success.200'),
+      )
+   ),
+   'emerald': (
+      'bg': theme('colors.emerald.400/.2'),
+      'mix': theme('colors.emerald.500'),
+      'isdark': (
+         'bg': theme('colors.emerald.400/.2'),
+         'mix': theme('colors.emerald.300'),
+      )
+   ),
+   'info': (
+      'bg': theme('colors.info.300/.2'),
+      'mix': theme('colors.info.300'),
+      'isdark': (
+         'bg': theme('colors.info.300/.2'),
+         'mix': theme('colors.info.200'),
+      )
+   ),
+   'warning': (
+      'bg': theme('colors.warning.300/.2'),
+      'mix': theme('colors.warning.300'),
+      'isdark': (
+         'bg': theme('colors.warning.300/.2'),
+         'mix': theme('colors.warning.200'),
+      )
+   ),
+   'danger': (
+      'bg': theme('colors.danger.300/.2'),
+      'mix': theme('colors.danger.300'),
+      'isdark': (
+         'bg': theme('colors.danger.300/.2'),
+         'mix': theme('colors.danger.200'),
+      )
+   )
 );
 
 $color-preset: ('success', 'indigo', 'info', 'warning', 'danger');

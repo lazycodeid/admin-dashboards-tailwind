@@ -1,11 +1,10 @@
 ## Install
 ```bash
-npm i -g yarn
-yarn set version berry
+npm install
 
-yarn
+# Developer Mode
+npm run dev
 
-yarn run dev
-or 
-yarn run build
+# Production Mode
+npm run build
 ```
