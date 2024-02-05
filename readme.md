@@ -1,10 +1,5 @@
 # About Lazy UI
 LazyUI is a fully responsive administration template. Based on the TailwindCSS framework and also a JavaScript plugin. Highly customizable and easy to use. Suitable for many screen resolutions from small mobile devices to large desktops.
-## Technology used for development
-- [TailwindCSS](https://tailwindcss.com/).
-- [SaSS](https://sass-lang.com/).
-- [Gulp](https://gulpjs.com/).
-- [Webpack](https://webpack.js.org/).
 
 ## Quick start
 ### Compile dist files
