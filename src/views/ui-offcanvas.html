@@ -1,27 +1,16 @@
-@@include("./layouts/start.html", {
-    "title": "Lazy - Blank Page"
-})
+{% extends "layouts/app.html" %}
 
-<div class="_lazy-root">
+{% set title = "Offcanvas" %}
 
-    @@include("./layouts/partials/sidebar.html")
+{% block styles %}<!-- push to: header -->{% endblock %}
 
-    <main class="_lazy-main">
+{% block scripts %}<!-- push to: scripts -->{% endblock %}
 
-        @@include("./layouts/partials/header.html")
-
-        <div class="_lazy-container">
-
-            
-            <div class="_lazy-card">
-                <div class="_lazy-card-body">
-                </div>
-            </div>
-            
+{% block content %}
+<div class="_lazy-container">            
+    <div class="_lazy-card">
+        <div class="_lazy-card-body">
         </div>
-        
-    </main>
+    </div>
 </div>
-
-
-@@include("./layouts/end.html")
+{% endblock %}
