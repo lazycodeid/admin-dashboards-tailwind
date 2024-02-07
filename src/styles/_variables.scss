@@ -35,13 +35,21 @@ $color-components: (
       'bg': theme('colors.danger.300'),
       'mix': theme('colors.white'),
    ),
-   'light': (
-      'bg': theme('colors.white'),
-      'mix': theme('colors.gray.900'),
-   ),
+   // 'light': (
+   //    'bg': theme('colors.white'),
+   //    'mix': theme('colors.gray.900'),
+   // ),
+   // 'dark': (
+   //    'bg': theme('colors.gray.800'),
+   //    'mix': theme('colors.white'),
+   // ),
    'dark': (
       'bg': theme('colors.gray.800'),
       'mix': theme('colors.white'),
+      'isdark': (
+         'bg': theme('colors.white'),
+         'mix': theme('colors.gray.900'),
+      )
    ),
 );
 
@@ -53,6 +61,10 @@ $color-label-components: (
          'bg': theme('colors.primary.300/0.2'),
          'mix': theme('colors.primary.200'),
       )
+   ),
+   'secondary': (
+      'bg': theme('colors.gray.500/0.2'),
+      'mix': theme('colors.gray.500'),
    ),
    'indigo': (
       'bg': theme('colors.indigo.300/.2'),

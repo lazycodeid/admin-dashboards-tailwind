@@ -52,8 +52,9 @@
 }
 
 .btn {
-    @apply relative flex justify-center items-center select-none rounded-lg text-white hover:opacity-90 overflow-hidden;
-    @apply min-w-16 py-2 px-5 text-[0.9em] font-medium;
+    @apply relative flex justify-center items-center select-none rounded-lg hover:opacity-90 overflow-hidden;
+    @apply min-w-16 py-2 px-4 text-[0.9em] font-medium;
+    @apply dark:text-white text-gray-900;
 
     span {
         &.ripple {
@@ -69,6 +70,23 @@
 
     &:disabled {
         @apply opacity-50;
+    }
+
+    // size
+    &.btn-xl {
+        @apply min-w-16 px-4 text-[1.2em];
+    }
+
+    &.btn-lg {
+        @apply min-w-16 px-4 text-[1em];
+    }
+
+    &.btn-sm {
+        @apply min-w-10 py-1.5 px-3 text-[0.8em] font-semibold;
+    }
+
+    &.btn-xs {
+        @apply min-w-10 py-1 px-3 text-[0.8em];
     }
 }
 
