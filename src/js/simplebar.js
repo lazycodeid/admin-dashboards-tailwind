@@ -642,7 +642,7 @@ var SimpleBar = (function () {
     var getOptions$1 = function (obj) {
         var initialObj = {};
         var options = Array.prototype.reduce.call(obj, function (acc, attribute) {
-            var option = attribute.name.match(/data-simplebar-(.+)/);
+            var option = attribute.name.match(/lazy-simplebar-(.+)/);
             if (option) {
                 var key = option[1].replace(/\W+(.)/g, function (_, chr) { return chr.toUpperCase(); });
                 switch (attribute.value) {
@@ -1491,8 +1491,8 @@ var SimpleBar = (function () {
         SimpleBar.initDOMLoadedElements = function () {
             document.removeEventListener('DOMContentLoaded', this.initDOMLoadedElements);
             window.removeEventListener('load', this.initDOMLoadedElements);
-            Array.prototype.forEach.call(document.querySelectorAll('[data-simplebar]'), function (el) {
-                if (el.getAttribute('data-simplebar') !== 'init' &&
+            Array.prototype.forEach.call(document.querySelectorAll('[lazy-simplebar]'), function (el) {
+                if (el.getAttribute('lazy-simplebar') !== 'init' &&
                     !SimpleBar.instances.has(el))
                     new SimpleBar(el, getOptions(el.attributes));
             });
@@ -1554,7 +1554,7 @@ var SimpleBar = (function () {
                 this.el.appendChild(this.axis.y.track.el);
             }
             SimpleBarCore.prototype.initDOM.call(this);
-            this.el.setAttribute('data-simplebar', 'init');
+            this.el.setAttribute('lazy-simplebar', 'init');
         };
         SimpleBar.prototype.unMount = function () {
             SimpleBarCore.prototype.unMount.call(this);
@@ -1584,16 +1584,16 @@ var SimpleBar = (function () {
             mutations.forEach(function (mutation) {
                 mutation.addedNodes.forEach(function (addedNode) {
                     if (addedNode.nodeType === 1) {
-                        if (addedNode.hasAttribute('data-simplebar')) {
+                        if (addedNode.hasAttribute('lazy-simplebar')) {
                             !SimpleBar.instances.has(addedNode) &&
                                 document.documentElement.contains(addedNode) &&
                                 new SimpleBar(addedNode, getOptions(addedNode.attributes));
                         }
                         else {
                             addedNode
-                                .querySelectorAll('[data-simplebar]')
+                                .querySelectorAll('[lazy-simplebar]')
                                 .forEach(function (el) {
-                                if (el.getAttribute('data-simplebar') !== 'init' &&
+                                if (el.getAttribute('lazy-simplebar') !== 'init' &&
                                     !SimpleBar.instances.has(el) &&
                                     document.documentElement.contains(el))
                                     new SimpleBar(el, getOptions(el.attributes));
@@ -1603,13 +1603,13 @@ var SimpleBar = (function () {
                 });
                 mutation.removedNodes.forEach(function (removedNode) {
                     if (removedNode.nodeType === 1) {
-                        if (removedNode.getAttribute('data-simplebar') === 'init') {
+                        if (removedNode.getAttribute('lazy-simplebar') === 'init') {
                             SimpleBar.instances.has(removedNode) &&
                                 !document.documentElement.contains(removedNode) &&
                                 SimpleBar.instances.get(removedNode).unMount();
                         }
                         else {
-                            Array.prototype.forEach.call(removedNode.querySelectorAll('[data-simplebar="init"]'), function (el) {
+                            Array.prototype.forEach.call(removedNode.querySelectorAll('[lazy-simplebar="init"]'), function (el) {
                                 SimpleBar.instances.has(el) &&
                                     !document.documentElement.contains(el) &&
                                     SimpleBar.instances.get(el).unMount();
