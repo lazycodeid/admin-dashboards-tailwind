@@ -1,10 +1,10 @@
 @use "variables";
 
 @layer components {
-    ._lazy-card {
+    .lazy-card {
         @apply relative block overflow-hidden text-gray-900 dark:text-white rounded-lg bg-white dark:bg-gray-800 w-full text-wrap min-h-0;
 
-        ._lazy-card-img {
+        .lazy-card-img {
             @apply aspect-w-10 aspect-h-6 overflow-hidden;
 
             img {
@@ -12,7 +12,7 @@
             }
         }
 
-        ._lazy-card-body {
+        .lazy-card-body {
             @apply p-4 w-full;
         }
 
