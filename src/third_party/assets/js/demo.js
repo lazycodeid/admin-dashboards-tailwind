@@ -29,9 +29,9 @@
         element.addEventListener("click", ()=>{
             let text = element.setAttribute("data-clipboard-text", element.closest("[lazy-ui]").querySelector("[lazy-ui-code]").innerText)
             element.disabled = true
-            element.innerHTML = `<i class="fa-duotone fa-party-horn"></i> Copied`
+            element.innerHTML = `<i class="fa-duotone fa-party-horn mr-2"></i> Copied`
             setTimeout(()=>{
-                element.innerHTML = `<i class="fa-duotone fa-copy"></i> Copy`
+                element.innerHTML = `<i class="fa-duotone fa-copy mr-2"></i> Copy`
                 element.disabled = false
             }, 1500)
         })

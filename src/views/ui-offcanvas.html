@@ -2,15 +2,83 @@
 
 {% set title = "Offcanvas" %}
 
-{% block styles %}<!-- push to: header -->{% endblock %}
-
-{% block scripts %}<!-- push to: scripts -->{% endblock %}
-
 {% block content %}
-<div class="_lazy-container">            
-    <div class="_lazy-card">
-        <div class="_lazy-card-body">
+<div class="_lazy-container-sm">     
+
+    <div class="lazy-heading">
+        <div class="lazy-title">Offcanvas</div>
+        <ul class="lazy-breadcrumb">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="dot"></li>
+            <li><a href="#">UI</a></li>
+            <li class="dot"></li>
+            <li class="active">Offcavnas</li>
+        </ul>
+    </div>      
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Basic</div>
+                <div class="flex flex-row flex-wrap gap-1">
+                    <button type="button" lazy-ripple lazy-ui-button class="btn btn-sm"><i class="fa-duotone fa-code mr-2"></i>View</button>
+                    <button type="button" lazy-ripple lazy-ui-copy data-clipboard-text="-" class="btn btn-sm"><i class="fa-duotone fa-copy mr-2"></i>Copy</button>
+                </div>
+            </div>
+
+            <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                <pre><code class="language-html rounded-lg">&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas&quot; class=&quot;btn btn-label-primary&quot;&gt;Show Offcanvas&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-transparent&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-gradient&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-footer&quot;&gt;
+            &lt;div class=&quot;text-center&quot;&gt;Footer&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+    
+            <div class="w-full overflow-hidden" lazy-ui-preview>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button lazy-offcanvas-toggle="demo-offcanvas" lazy-ripple class="btn btn-label-emerald">Show Offcanvas</button>
+
+                    <div lazy-offcanvas="demo-offcanvas" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop offcanvas-transparent"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-gradient">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                            <div class="_lazy-offcanvas-footer">
+                                <div class="text-center">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{% block styles %}<!-- pages start: ui-cards -->
+<link rel="stylesheet" href="assets/vendor/highlight/styles/github-dark.min.css">
+<!-- pages end: ui-cards -->{% endblock %}
+
+{% block scripts %}<!-- pages start: ui-buttons -->
+<script src="assets/vendor/clipboard/clipboard.min.js"></script>
+<script src="assets/vendor/highlight/highlight.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<!-- pages end: ui-buttons -->{% endblock %}
