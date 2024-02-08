@@ -62,6 +62,8 @@
 
     // main layouts -
 
+    // utilities
+
     ._lazy-disable-scroll {
         @apply overflow-hidden;
 
@@ -100,4 +102,26 @@
         -moz-animation: BgGradient 3s ease infinite;
         animation: BgGradient 3s ease infinite;
     }
+
+    // heading
+    .lazy-heading {
+        @apply mb-10;
+
+        .lazy-title {
+            @apply mb-3 font-bold text-2xl text-gray-900 dark:text-white;
+        }
+        
+        .lazy-breadcrumb {
+            @apply flex flex-row items-center flex-wrap text-sm font-normal text-gray-900 dark:text-gray-100;
+    
+            .dot {
+                @apply w-1 h-1 rounded-full bg-gray-500 mx-4
+            }
+    
+            .active {
+                @apply text-gray-600;
+            }
+        }
+    }
+
 }
