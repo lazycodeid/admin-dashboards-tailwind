@@ -32,7 +32,7 @@
             }
 
             &.is-active {
-                @apply bg-white/80 dark:bg-gray-800 text-primary-300;
+                @apply bg-white/80 dark:bg-gray-800 text-primary-300 contrast;
                 .color-preset {
                     @apply scale-150;
                 }
@@ -42,6 +42,14 @@
                 @apply text-xs font-semibold;
             }
 
+            span {
+                &.ripple {
+                    @apply absolute rounded-full bg-gray-400/30;
+                    transform: scale(0);
+                    animation: ripple 900ms ease;
+                }
+            }
+        
             .color-preset {
                 @apply rounded-full h-4 w-4 transition-all duration-500 ease-in-out;
             }

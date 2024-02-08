@@ -1,9 +1,10 @@
 @layer components {
     ._lazy-header-wrapper {
-        @apply flex flex-col sticky top-0 right-0 md:h-20 h-16 z-30 w-full bg-gray-200/80 dark:bg-gray-900/80 backdrop-blur-[6px] transition-all;
+        @apply flex flex-col sticky top-0 right-0 md:h-20 h-16 z-30 w-full transition-all;
 
         &.scroll-down {
-            @apply md:h-16 #{!important};
+            @apply bg-white/80 backdrop-blur-[6px];
+            @apply md:h-16 dark:bg-gray-900/80 #{!important};
         }
         
         &.scroll-top {
@@ -20,6 +21,12 @@
             ._lazy-header-end {
                 @apply flex flex-row justify-end items-center grow md:gap-x-3 gap-x-2
             }
+        }
+    }
+
+    :is([theme-contrast="bold"]) {
+        ._lazy-header-wrapper.scroll-down {
+            @apply bg-gray-200/80;
         }
     }
     

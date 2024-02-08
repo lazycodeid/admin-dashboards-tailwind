@@ -40,16 +40,7 @@
     }
 }
 
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
+
 
 .btn {
     @apply relative flex justify-center items-center select-none rounded-lg hover:opacity-90 overflow-hidden;
@@ -87,17 +78,6 @@
 
     &.btn-xs {
         @apply min-w-10 py-1 px-3 text-[0.8em];
-    }
-}
-
-@keyframes ripple-circle {
-    0% {
-        transform: scale(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(30, 30);
-        opacity: 0;
     }
 }
 

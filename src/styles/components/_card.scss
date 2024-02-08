@@ -2,7 +2,7 @@
 
 @layer components {
     .lazy-card {
-        @apply relative block overflow-hidden text-gray-900 dark:text-white rounded-lg bg-white dark:bg-gray-800 w-full text-wrap min-h-0;
+        @apply relative block overflow-hidden text-gray-900 dark:text-white rounded-lg bg-white dark:bg-gray-800 w-full text-wrap min-h-0 contrast;
 
         .lazy-card-img {
             @apply aspect-w-10 aspect-h-6 overflow-hidden;

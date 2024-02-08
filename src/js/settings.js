@@ -3,6 +3,7 @@ let settings = {
         themeMode : 'auto',
         themeSidebar : 'default',
         themeColor : 'success',
+        themeContrast: 'default'
     },
     get : (key = '') => {
         let value;
@@ -25,7 +26,8 @@ let settings = {
     validate : {
         themeMode : ['auto', 'light', 'dark'],
         themeSidebar : ['default', 'v2'],
-        themeColor : ['success', 'indigo', 'info', 'warning', 'danger']
+        themeColor : ['success', 'indigo', 'info', 'warning', 'danger'],
+        themeContrast : ['default', 'bold'],
     }
 }
 
@@ -88,11 +90,27 @@ document.querySelectorAll("[lazy-settings-sidebar]").forEach((element) => {
 })
 // sidebar handler end
 
+// contrast handler start
+toggleContrast(settings.get("themeContrast"));
+
+function toggleContrast(v) {
+    settings.set('themeContrast', settings.validate.themeContrast.includes(v) ? v : 'default');
+
+    document.querySelector("._lazy-settings-widget-wrapper button[lazy-settings-contrast].is-active")?.classList.remove("is-active");
+    document.querySelector(`._lazy-settings-widget-wrapper button[lazy-settings-contrast="${settings.get("themeContrast")}"]`)?.classList.add("is-active");
+
+    document.querySelector("html").setAttribute('theme-contrast', settings.get("themeContrast"));
+}
+
+document.querySelectorAll("[lazy-settings-contrast]").forEach((element) => {
+    element.addEventListener("click", () => {
+        toggleContrast(element.getAttribute("lazy-settings-contrast"));
+    })
+})
+// contrast handler end
+
 
 // color preset start
-
-
-
 const colorPreset = document.querySelector("[lazy-settins-colors]")
 if(colorPreset) {
     const preset = settings.validate.themeColor
@@ -137,5 +155,6 @@ document.querySelector("[lazy-settings-restart]")?.addEventListener("click", () 
     toggleTheme(settings.default.themeMode);
     toggleVersionSidebar(settings.default.themeSidebar);
     toggleColor(settings.default.themeColor);
+    toggleContrast(settings.default.themeContrast);
 })
 // restart end
