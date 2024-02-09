@@ -3,7 +3,7 @@
 {% set title = "Offcanvas" %}
 
 {% block content %}
-<div class="_lazy-container-sm">     
+<div class="_lazy-container-sm">
 
     <div class="lazy-heading">
         <div class="lazy-title">Offcanvas</div>
@@ -31,7 +31,7 @@
                 <pre><code class="language-html rounded-lg">&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas&quot; class=&quot;btn btn-label-primary&quot;&gt;Show Offcanvas&lt;/button&gt;
 
 &lt;div lazy-offcanvas=&quot;demo-offcanvas&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
-    &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-transparent&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;_lazy-offcanvas-content offcanvas-gradient&quot;&gt;
         &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
             &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
@@ -52,7 +52,7 @@
                     <button lazy-offcanvas-toggle="demo-offcanvas" lazy-ripple class="btn btn-label-emerald">Show Offcanvas</button>
 
                     <div lazy-offcanvas="demo-offcanvas" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
-                        <div class="_lazy-offcanvas-backdrop offcanvas-transparent"></div>
+                        <div class="_lazy-offcanvas-backdrop"></div>
                         <div class="_lazy-offcanvas-content offcanvas-gradient">
                             <div class="_lazy-offcanvas-header">
                                 <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
@@ -70,6 +70,380 @@
             </div>
         </div>
     </div>
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Backdrop</div>
+                <div class="flex flex-row flex-wrap gap-1">
+                    <button type="button" lazy-ripple lazy-ui-button class="btn btn-sm"><i class="fa-duotone fa-code mr-2"></i>View</button>
+                    <button type="button" lazy-ripple lazy-ui-copy data-clipboard-text="-" class="btn btn-sm"><i class="fa-duotone fa-copy mr-2"></i>Copy</button>
+                </div>
+            </div>
+
+            <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                <pre><code class="language-html rounded-lg">&lt;!-- 
+    Without Backdrop
+    add class offcanvas-transparent
+    ex : &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-transparent&quot;&gt;&lt;/div&gt;
+--&gt;
+
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-backdrop&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;Without Backdrop&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-backdrop&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-transparent&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-gradient&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-footer&quot;&gt;
+            &lt;div class=&quot;text-center&quot;&gt;Footer&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 
+    With Backdrop blur
+    add class offcanvas-blur
+    ex : &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-blur&quot;&gt;&lt;/div&gt;
+--&gt;
+
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-backdrop-blur&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;With Backdrop Blur&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-backdrop-blur&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-blur&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-gradient&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-footer&quot;&gt;
+            &lt;div class=&quot;text-center&quot;&gt;Footer&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 
+    Enable Scrolling Backdrop
+    add attr lazy-offcanvas-scroll=&quot;true&quot;
+    ex : &lt;div lazy-offcanvas=&quot;demo-offcanvas-backdrop-scroll&quot; lazy-offcanvas-scroll=&quot;true&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+--&gt;
+
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-backdrop-scroll&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;With Backdrop Blur&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-backdrop-scroll&quot; lazy-offcanvas-scroll=&quot;true&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop offcanvas-blur&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-gradient&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-footer&quot;&gt;
+            &lt;div class=&quot;text-center&quot;&gt;Footer&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+    
+            <div class="w-full overflow-hidden" lazy-ui-preview>
+                <div class="flex flex-wrap justify-center gap-2">
+
+                    <!-- 
+                        Without Backdrop
+                        add class offcanvas-transparent
+                        ex : <div class="_lazy-offcanvas-backdrop offcanvas-transparent"></div>
+                    -->
+
+                    <button lazy-offcanvas-toggle="demo-offcanvas-backdrop" lazy-ripple class="btn btn-label-emerald">Without Backdrop</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-backdrop" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop offcanvas-transparent"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-gradient">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                            <div class="_lazy-offcanvas-footer">
+                                <div class="text-center">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 
+                        With Backdrop blur
+                        add class offcanvas-blur
+                        ex : <div class="_lazy-offcanvas-backdrop offcanvas-blur"></div>
+                    -->
+                    
+                    <button lazy-offcanvas-toggle="demo-offcanvas-backdrop-blur" lazy-ripple class="btn btn-label-emerald">With Backdrop Blur</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-backdrop-blur" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop offcanvas-blur"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-gradient">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                            <div class="_lazy-offcanvas-footer">
+                                <div class="text-center">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 
+                        Enable Scrolling Backdrop
+                        add attr lazy-offcanvas-scroll="true"
+                        ex : <div lazy-offcanvas="demo-offcanvas-backdrop-scroll" lazy-offcanvas-scroll="true" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                    -->
+                    
+                    <button lazy-offcanvas-toggle="demo-offcanvas-backdrop-scroll" lazy-ripple class="btn btn-label-emerald">With Backdrop Blur</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-backdrop-scroll" lazy-offcanvas-scroll="true" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop offcanvas-blur"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-gradient">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                            <div class="_lazy-offcanvas-footer">
+                                <div class="text-center">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Position</div>
+                <div class="flex flex-row flex-wrap gap-1">
+                    <button type="button" lazy-ripple lazy-ui-button class="btn btn-sm"><i class="fa-duotone fa-code mr-2"></i>View</button>
+                    <button type="button" lazy-ripple lazy-ui-copy data-clipboard-text="-" class="btn btn-sm"><i class="fa-duotone fa-copy mr-2"></i>Copy</button>
+                </div>
+            </div>
+
+            <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                <pre><code class="language-html rounded-lg">&lt;!-- 
+    Offcanvas Top
+    add class offcanvas-top
+    ex : &lt;div class=&quot;_lazy-offcanvas-content offcanvas-top&quot;&gt;
+--&gt;
+    
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-top&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;Offcanvas Top&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-top&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-top&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 
+    Offcanvas Left
+    add class offcanvas-left
+    ex : &lt;div class=&quot;_lazy-offcanvas-content offcanvas-left&quot;&gt;
+--&gt;
+
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-left&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;Offcanvas Left&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-left&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-left&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 
+    Offcanvas right
+    default position
+    ex : &lt;div class=&quot;_lazy-offcanvas-content&quot;&gt;
+--&gt;
+
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-right&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;Offcanvas Right&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-right&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 
+    Offcanvas bottom
+    add class offcanvas-bottom
+    ex : &lt;div class=&quot;_lazy-offcanvas-content offcanvas-bottom&quot;&gt;
+--&gt;
+
+&lt;button lazy-offcanvas-toggle=&quot;demo-offcanvas-bottom&quot; lazy-ripple class=&quot;btn btn-label-emerald&quot;&gt;Offcanvas Bottom&lt;/button&gt;
+
+&lt;div lazy-offcanvas=&quot;demo-offcanvas-bottom&quot; class=&quot;_lazy-offcanvas&quot; aria-labelledby=&quot;slide-over-settings&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot;&gt;
+    &lt;div class=&quot;_lazy-offcanvas-backdrop&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;_lazy-offcanvas-content offcanvas-bottom&quot;&gt;
+        &lt;div class=&quot;_lazy-offcanvas-header&quot;&gt;
+            &lt;h3 class=&quot;_lazy-offcanvas-title&quot;&gt;Offcanvas&lt;/h3&gt;
+            &lt;button lazy-offcanvas-toggle=&quot;settings&quot; class=&quot;btn-circle btn-md&quot; lazy-icon=&quot;fa-duotone fa-xmark&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;_lazy-offcanvas-body&quot;&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+    
+            <div class="w-full overflow-hidden" lazy-ui-preview>
+                <div class="flex flex-wrap justify-center gap-2">
+
+                    <!-- 
+                        Offcanvas Top
+                        add class offcanvas-top
+                        ex : <div class="_lazy-offcanvas-content offcanvas-top">
+                     -->
+                     
+                    <button lazy-offcanvas-toggle="demo-offcanvas-top" lazy-ripple class="btn btn-label-emerald">Offcanvas Top</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-top" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-top">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 
+                        Offcanvas Left
+                        add class offcanvas-left
+                        ex : <div class="_lazy-offcanvas-content offcanvas-left">
+                     -->
+
+                    <button lazy-offcanvas-toggle="demo-offcanvas-left" lazy-ripple class="btn btn-label-emerald">Offcanvas Left</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-left" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-left">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 
+                        Offcanvas right
+                        default position
+                        ex : <div class="_lazy-offcanvas-content">
+                     -->
+
+                    <button lazy-offcanvas-toggle="demo-offcanvas-right" lazy-ripple class="btn btn-label-emerald">Offcanvas Right</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-right" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop"></div>
+                        <div class="_lazy-offcanvas-content">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 
+                        Offcanvas bottom
+                        add class offcanvas-bottom
+                        ex : <div class="_lazy-offcanvas-content offcanvas-bottom">
+                     -->
+
+                    <button lazy-offcanvas-toggle="demo-offcanvas-bottom" lazy-ripple class="btn btn-label-emerald">Offcanvas Bottom</button>
+
+                    <div lazy-offcanvas="demo-offcanvas-bottom" class="_lazy-offcanvas" aria-labelledby="slide-over-settings" role="dialog" aria-modal="true">
+                        <div class="_lazy-offcanvas-backdrop"></div>
+                        <div class="_lazy-offcanvas-content offcanvas-bottom">
+                            <div class="_lazy-offcanvas-header">
+                                <h3 class="_lazy-offcanvas-title">Offcanvas</h3>
+                                <button lazy-offcanvas-toggle="settings" class="btn-circle btn-md" lazy-icon="fa-duotone fa-xmark"></button>
+                            </div>
+                            <div class="_lazy-offcanvas-body">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Other</div>
+            </div>
+
+            <div>
+                <p class="text-sm mb-5">add class <span class="text-primary-300 dark:text-primary-200 font-semibold">offcanvas-gradient</span> like <span class="text-primary-300 dark:text-primary-200 font-semibold">&lt;div class=&quot;_lazy-offcanvas-content offcanvas-gradient&quot;&gt;</span> for add background gradient.</p>
+                
+                <pre><code class="language-js rounded-lg">// Show hidden Offcanvas With Javascript
+lazyOffCanvas("key", show = true) // params: key, show = true or false</code></pre>
+            </div>
+
+
+        </div>
+    </div>
+
 </div>
 {% endblock %}
 
