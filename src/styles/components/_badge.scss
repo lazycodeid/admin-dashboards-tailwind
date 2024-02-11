@@ -1,3 +1,5 @@
+@use "variables";
+
 @layer components {
     ._lazy-badge-xs {
         @apply text-xs font-bold py-1 px-2 rounded-md;
@@ -8,6 +10,54 @@
         
         &.badge-success {
             @apply bg-success-300/15 text-success-400 dark:text-success-200;
+        }
+    }
+
+    .badge {
+        @apply text-xs py-1 px-2 rounded-md font-medium;
+
+        &.badge-rounded {
+            @apply rounded-full;
+        }
+    }
+
+    @each $color, $value in variables.$color-components {
+        .badge {
+            &.badge-#{$color} {
+                background-color: map-get($map: $value, $key: 'bg');
+                color: map-get($map: $value, $key: 'mix');
+            }
+        }
+        @if map-get($map: $value, $key: 'isdark') {
+            $isdark : map-get($map: $value, $key: 'isdark');
+            :is([theme-mode="dark"]) {
+                .badge {
+                    &.badge-#{$color} {
+                        background-color: map-get($map: $isdark, $key: 'bg');
+                        color: map-get($map: $isdark, $key: 'mix');
+                    }
+                }
+            }
+        }
+    }
+
+    @each $color, $value in variables.$color-label-components {
+        .badge {
+            &.badge-label-#{$color} {
+                background-color: map-get($map: $value, $key: 'bg');
+                color: map-get($map: $value, $key: 'mix');
+            }
+        }
+        @if map-get($map: $value, $key: 'isdark') {
+            $isdark : map-get($map: $value, $key: 'isdark');
+            :is([theme-mode="dark"]) {
+                .badge {
+                    &.badge-label-#{$color} {
+                        background-color: map-get($map: $isdark, $key: 'bg');
+                        color: map-get($map: $isdark, $key: 'mix');
+                    }
+                }
+            }
         }
     }
 }

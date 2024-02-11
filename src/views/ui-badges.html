@@ -1,0 +1,139 @@
+{% extends "layouts/app.html" %}
+
+{% set title = "UI Badges" %}
+
+{% block content %}
+<div class="_lazy-container-sm">
+
+    <div class="lazy-heading">
+        <div class="lazy-title">Badges</div>
+        <ul class="lazy-breadcrumb">
+            <li><a href="">Dashboard</a></li>
+            <li class="dot"></li>
+            <li><a href="">UI</a></li>
+            <li class="dot"></li>
+            <li class="active">Badges</li>
+        </ul>
+    </div>
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Basic</div>
+                <div class="flex flex-row flex-wrap gap-1">
+                    <button type="button" lazy-ripple lazy-ui-button class="btn btn-sm"><i class="fa-duotone fa-code mr-2"></i>View</button>
+                    <button type="button" lazy-ripple lazy-ui-copy data-clipboard-text="-" class="btn btn-sm"><i class="fa-duotone fa-copy mr-2"></i>Copy</button>
+                </div>
+            </div>
+            <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                <pre><code class="language-html rounded-lg">&lt;span class=&quot;badge badge-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span class=&quot;badge badge-secondary&quot;&gt;Secondary&lt;/span&gt;
+&lt;span class=&quot;badge badge-indigo&quot;&gt;Indigo&lt;/span&gt;
+&lt;span class=&quot;badge badge-success&quot;&gt;Success&lt;/span&gt;
+&lt;span class=&quot;badge badge-emerald&quot;&gt;Emerald&lt;/span&gt;
+&lt;span class=&quot;badge badge-info&quot;&gt;Info&lt;/span&gt;
+&lt;span class=&quot;badge badge-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span class=&quot;badge badge-danger&quot;&gt;Danger&lt;/span&gt;
+&lt;span class=&quot;badge badge-dark&quot;&gt;Dark&lt;/span&gt;</code></pre>
+            </div>
+    
+            <div class="w-full overflow-hidden" lazy-ui-preview>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-primary">Primary</span>
+                    <span class="badge badge-secondary">Secondary</span>
+                    <span class="badge badge-indigo">Indigo</span>
+                    <span class="badge badge-success">Success</span>
+                    <span class="badge badge-emerald">Emerald</span>
+                    <span class="badge badge-info">Info</span>
+                    <span class="badge badge-warning">Warning</span>
+                    <span class="badge badge-danger">Danger</span>
+                    <span class="badge badge-dark">Dark</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Label</div>
+                <div class="flex flex-row flex-wrap gap-1">
+                    <button type="button" lazy-ripple lazy-ui-button class="btn btn-sm"><i class="fa-duotone fa-code mr-2"></i>View</button>
+                    <button type="button" lazy-ripple lazy-ui-copy data-clipboard-text="-" class="btn btn-sm"><i class="fa-duotone fa-copy mr-2"></i>Copy</button>
+                </div>
+            </div>
+            <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                <pre><code class="language-html rounded-lg">&lt;span class=&quot;badge badge-label-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-secondary&quot;&gt;Secondary&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-indigo&quot;&gt;Indigo&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-success&quot;&gt;Success&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-emerald&quot;&gt;Emerald&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-info&quot;&gt;Info&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span class=&quot;badge badge-label-danger&quot;&gt;Danger&lt;/span&gt;</code></pre>
+            </div>
+    
+            <div class="w-full overflow-hidden" lazy-ui-preview>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-label-primary">Primary</span>
+                    <span class="badge badge-label-secondary">Secondary</span>
+                    <span class="badge badge-label-indigo">Indigo</span>
+                    <span class="badge badge-label-success">Success</span>
+                    <span class="badge badge-label-emerald">Emerald</span>
+                    <span class="badge badge-label-info">Info</span>
+                    <span class="badge badge-label-warning">Warning</span>
+                    <span class="badge badge-label-danger">Danger</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lazy-card mb-5" lazy-ui>
+        <div class="lazy-card-body">
+            <div class="flex flex-row flex-wrap gap-2 mb-4 items-center justify-between">
+                <div class="font-semibold">Rounded</div>
+                <div class="flex flex-row flex-wrap gap-1">
+                    <button type="button" lazy-ripple lazy-ui-button class="btn btn-sm"><i class="fa-duotone fa-code mr-2"></i>View</button>
+                    <button type="button" lazy-ripple lazy-ui-copy data-clipboard-text="-" class="btn btn-sm"><i class="fa-duotone fa-copy mr-2"></i>Copy</button>
+                </div>
+            </div>
+            <div class="w-full overflow-hidden rounded-lg hidden" lazy-ui-code>
+                <pre><code class="language-html rounded-lg">&lt;span class=&quot;badge badge-rounded badge-primary&quot;&gt;Primary&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-label-secondary&quot;&gt;Secondary&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-indigo&quot;&gt;Indigo&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-label-success&quot;&gt;Success&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-emerald&quot;&gt;Emerald&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-label-info&quot;&gt;Info&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-warning&quot;&gt;Warning&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-label-danger&quot;&gt;Danger&lt;/span&gt;
+&lt;span class=&quot;badge badge-rounded badge-dark&quot;&gt;Dark&lt;/span&gt;</code></pre>
+            </div>
+    
+            <div class="w-full overflow-hidden" lazy-ui-preview>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-rounded badge-primary">Primary</span>
+                    <span class="badge badge-rounded badge-label-secondary">Secondary</span>
+                    <span class="badge badge-rounded badge-indigo">Indigo</span>
+                    <span class="badge badge-rounded badge-label-success">Success</span>
+                    <span class="badge badge-rounded badge-emerald">Emerald</span>
+                    <span class="badge badge-rounded badge-label-info">Info</span>
+                    <span class="badge badge-rounded badge-warning">Warning</span>
+                    <span class="badge badge-rounded badge-label-danger">Danger</span>
+                    <span class="badge badge-rounded badge-dark">Dark</span>
+                </div>
+            </div>
+            <div class="text-xs font-medium mt-5">add class <span class="text-primary-300">badge-rounded</span></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}<!-- pages start: ui-cards -->
+<link rel="stylesheet" href="assets/vendor/highlight/styles/github-dark.min.css">
+<!-- pages end: ui-cards -->{% endblock %}
+
+{% block scripts %}<!-- pages start: ui-buttons -->
+<script src="assets/vendor/clipboard/clipboard.min.js"></script>
+<script src="assets/vendor/highlight/highlight.min.js"></script>
+<script src="assets/js/demo.js"></script>
+<!-- pages end: ui-buttons -->{% endblock %}
