@@ -14,10 +14,213 @@
             <li class="active">Ilsya Velixs</li>
         </ul>
     </div>
-    
+
+    <div class="profile-header-wrapper relative">
+        <div class="profile-cover"></div>
+        <div class="profile-avatar">
+            <img src="assets/img/avatar/1.jpg" alt="avatar">
+            <div class="profile-info">
+                <span class="profile-name">Ilsya Velixs</span>
+                <span class="profile-sub">Web Developer</span>
+            </div>
+        </div>
+        <div class="profile-footer">
+            <div class="actions" lazy-tabs="profile" role="tablist">
+                <button class="list-item is-active" lazy-tab="#personal" role="tab">
+                    <i class="fa-duotone fa-circle-user"></i>
+                    <span>Profile</span>
+                </button>
+                <button class="list-item" lazy-tab="#followers" role="tab">
+                    <i class="fa-duotone fa-heart"></i>
+                    <span>Followers</span>
+                </button>
+                <button class="list-item" lazy-tab="#gallery" role="tab">
+                    <i class="fa-duotone fa-folder-image"></i>
+                    <span>Gallery</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div lazy-tabs-content="profile">
+
+        <div id="personal" role="tabpanel">
+            <div class="grid grid-cols-12 gap-6">
+                <div class="lg:col-span-4 col-span-12">
+                    <div class="sticky top-20 left-0">
+                        <div class="lazy-card rounded-xl mb-5">
+                            <div class="lazy-card-body">
+                                <div class="flex flex-row py-3">
+                                    <div class="w-full h-full flex gap-y-1 flex-col items-center">
+                                        <div class="md:text-2xl text-xl font-bold">1,390</div>
+                                        <div class="font-medium">Follower</div>
+                                    </div>
+                                    <div class="w-full h-full gap-y-1 flex flex-col items-center">
+                                        <div class="md:text-2xl text-xl font-bold">10,390</div>
+                                        <div class="font-medium">Following</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lazy-card rounded-xl mb-5">
+                            <div class="lazy-card-body">
+                                <div class="text-lg font-semibold mb-3">About</div>
+                                <p class="text-sm mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci iure deleniti tempore!</p>
+                                <ul class="flex flex-col gap-y-5">
+                                    <li class="flex items-center gap-x-2">
+                                        <i class="fa-duotone fa-location-dot fa-lg fa-fw"></i>
+                                        <span class="text-sm">Live at <span class="font-medium">Amsterdam</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-x-2">
+                                        <i class="fa-duotone fa-envelope fa-lg fa-fw"></i>
+                                        <span class="text-sm">ilsya@velixs.com</span>
+                                    </li>
+                                    <li class="flex items-center gap-x-2">
+                                        <i class="fa-duotone fa-briefcase fa-lg fa-fw"></i>
+                                        <span class="text-sm">Studied at <span class="font-medium">Las Almas Cartel</span></span>
+                                    </li>
+                                    <li class="flex items-center gap-x-2">
+                                        <i class="fa-duotone fa-briefcase fa-lg fa-fw"></i>
+                                        <span class="text-sm">Leaders at <span class="font-medium">Manhattan Engineering</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-8 col-span-12">
+                    <div class="lazy-card rounded-xl mb-5">
+                        <div class="lazy-card-body">
+                            <textarea class="w-full bg-transparent p-3 border border-gray-300 dark:border-gray-700 rounded-xl text-sm focus:ring-0 focus:outline-0 resize-none" rows="5" placeholder="Share what you are thinking here"></textarea>
+                            <div class="flex flex-row justify-between items-center mt-3">
+                                <label class="flex flex-row items-center justify-center py-2 px-3 rounded-full bg-gray-200 dark:bg-gray-700/30 text-gray-600  dark:text-gray-300 gap-x-1 cursor-pointer select-none">
+                                    <input type="file" class="hidden">
+                                    <i class="fa-duotone fa-folder-image fa-fw fa-lg"></i>
+                                    <span class="font-medium text-sm">Image/Video</span>
+                                </label>
+                                <button type="button" lazy-ripple class="btn btn-dark">Post</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- posts start -->
+                    <!-- items start -->
+                    <div class="lazy-card rounded-xl mb-5">
+                        <div class="lazy-card-body">
+                            <!-- header start -->
+                            <div class="flex flex-row justify-between items-center mx-2">
+                                <div class="flex flex-row gap-x-3 items-center">
+                                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                                        <img class="w-full h-full object-cover object-center" src="assets/img/avatar/1.jpg" alt="avatar">
+                                    </div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <div class="font-semibold">Ilsya Velixs</div>
+                                        <div class="text-xs text-muted">20 Feb 2024</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-light fa-ellipsis-vertical"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- header end -->
+
+                            <!-- content start-->
+                            <div class="my-5">
+                                <p class="text-sm line-clamp-3 mb-3 mx-2">Wibu!</p>
+                                <div class="aspect-[4/2.5] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700/30">
+                                    <img class="w-full h-full object-cover object-center" src="assets/img/thumbnails/1.jpg" alt="thumbnails">
+                                </div>
+                            </div>
+                            <!-- content end -->
+                            <!-- footer start -->
+                            <div class="flex flex-row justify-between">
+                                <div class="flex items-center gap-x-1">
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <!-- <i class="fa-light fa-heart"></i> --><!-- if unliked -->
+                                        <i class="fa-solid fa-heart text-red-500"></i>
+                                    </button>
+                                    <span class="text-sm">304k</span>
+                                </div>
+                                <div class="flex flex-row items-center gap-x-1">
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-duotone fa-message-dots"></i>
+                                    </button>
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-light fa-share-nodes"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- footer end -->
+                        </div>
+                    </div>
+                    <!-- items end -->
+
+                    <!-- items start -->
+                    <div class="lazy-card rounded-xl mb-5">
+                        <div class="lazy-card-body">
+                            <!-- header start -->
+                            <div class="flex flex-row justify-between items-center mx-2">
+                                <div class="flex flex-row gap-x-3 items-center">
+                                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                                        <img class="w-full h-full object-cover object-center" src="assets/img/avatar/1.jpg" alt="avatar">
+                                    </div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <div class="font-semibold">Ilsya Velixs</div>
+                                        <div class="text-xs text-muted">20 Feb 2024</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-light fa-ellipsis-vertical"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- header end -->
+
+                            <!-- content start-->
+                            <div class="my-5">
+                                <p class="text-sm line-clamp-3 mb-3 mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consectetur magnam voluptas labore maxime laboriosam, consequuntur quaerat, corrupti mollitia molestiae voluptatibus reprehenderit animi necessitatibus eveniet aliquid non iste impedit voluptatem.</p>
+                                <div class="aspect-[4/2.5] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700/30">
+                                    <img class="w-full h-full object-cover object-center" src="assets/img/thumbnails/2.jpg" alt="thumbnails">
+                                </div>
+                            </div>
+                            <!-- content end -->
+                            <!-- footer start -->
+                            <div class="flex flex-row justify-between">
+                                <div class="flex items-center gap-x-1">
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-light fa-heart"></i>
+                                        <!-- <i class="fa-solid fa-heart text-red-500"></i> -->
+                                    </button>
+                                    <span class="text-sm">33k</span>
+                                </div>
+                                <div class="flex flex-row items-center gap-x-1">
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-duotone fa-message-dots"></i>
+                                    </button>
+                                    <button type="button" class="btn-circle btn-sm">
+                                        <i class="fa-light fa-share-nodes"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- footer end -->
+                        </div>
+                    </div>
+                    <!-- items end -->
+                    <!-- posts end -->
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden" id="followers" role="tabpanel">
+            followers
+        </div>
+        <div class="hidden" id="gallery" role="tabpanel">
+            gallery
+        </div>
+    </div>
 </div>
 {% endblock %}
-
-{% block styles %}<!-- push to: header -->{% endblock %}
-
-{% block scripts %}<!-- push to: scripts -->{% endblock %}

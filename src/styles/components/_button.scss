@@ -40,8 +40,6 @@
     }
 }
 
-
-
 .btn {
     @apply relative flex justify-center items-center select-none rounded-lg hover:opacity-90 overflow-hidden;
     @apply min-w-16 py-2 px-4 text-[0.9em] font-medium;
@@ -82,36 +80,42 @@
 }
 
 .btn-circle {
-    @apply relative inline-flex dark:text-gray-500 text-gray-600 hover:bg-gray-500/[0.08] p-2 appearance-none rounded-full select-none justify-center items-center;
+    @apply relative flex appearance-none rounded-full select-none justify-center items-center;
+    @apply dark:text-gray-500 text-gray-600 hover:bg-gray-500/[0.08];
+    @apply w-10 aspect-[1/1];
+
+    i {
+        @apply text-[20px]/none;
+    }
 
     &.btn-xs {
-        @apply p-1;
+        @apply w-6;
         i {
-            @apply w-[1em] h-[1em] text-sm;
+            @apply text-xs/none;
         }
     }
 
     &.btn-sm {
-        @apply p-1;
+        @apply w-9;
         i {
-            @apply w-[1.25em] h-[1.25em] text-base;
-        }
-    }
-    
-    &.btn-md {
-        @apply p-1.5;
-        i {
-            @apply w-[1.25em] h-[1.25em] text-lg;
+            @apply text-base/none;
         }
     }
 
     &.btn-lg {
-        @apply p-3;
+        @apply w-12;
         i {
-            @apply w-[1.5em] h-[1.5em] text-lg;
+            @apply text-2xl/none;
         }
     }
 
+    &.btn-xl {
+        @apply w-14;
+        i {
+            @apply text-3xl/none;
+        }
+    }
+    
     // ripple effect start
     .ripple-wrapper {
         @apply overflow-hidden h-full w-full absolute rounded-full;
@@ -141,10 +145,6 @@
     }
             
     // ripple effect end
-
-    i {
-        @apply w-[1.25em] h-[1.25em] justify-center items-center text-xl flex;
-    }
     
     .btn-badge {
         @apply absolute z-[1] flex p-1 text-xs h-5 min-w-5 bg-danger-300 text-white rounded-full justify-center items-center right-0 top-0;
