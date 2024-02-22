@@ -18,7 +18,7 @@
     <div class="profile-header-wrapper relative">
         <div class="profile-cover"></div>
         <div class="profile-avatar">
-            <img src="assets/img/avatar/1.jpg" alt="avatar">
+            <img src="assets/img/avatar/1.webp" alt="avatar">
             <div class="profile-info">
                 <span class="profile-name">Ilsya Velixs</span>
                 <span class="profile-sub">Web Developer</span>
@@ -26,11 +26,11 @@
         </div>
         <div class="profile-footer">
             <div class="actions" lazy-tabs="profile" role="tablist">
-                <button class="list-item" lazy-tab="#personal" role="tab">
+                <button class="list-item is-active" lazy-tab="#personal" role="tab">
                     <i class="fa-duotone fa-circle-user"></i>
                     <span>Profile</span>
                 </button>
-                <button class="list-item is-active" lazy-tab="#followers" role="tab">
+                <button class="list-item" lazy-tab="#followers" role="tab">
                     <i class="fa-duotone fa-heart"></i>
                     <span>Followers</span>
                 </button>
@@ -43,7 +43,7 @@
     </div>
 
     <div lazy-tabs-content="profile">
-        <div class="hidden" id="personal" role="tabpanel">
+        <div id="personal" role="tabpanel">
             <div class="grid grid-cols-12 gap-6">
                 <div class="lg:col-span-4 col-span-12">
                     <div class="sticky top-20 left-0">
@@ -111,7 +111,7 @@
                             <div class="flex flex-row justify-between items-center mx-2">
                                 <div class="flex flex-row gap-x-3 items-center">
                                     <div class="w-10 h-10 rounded-full overflow-hidden">
-                                        <img class="w-full h-full object-cover object-center" src="assets/img/avatar/1.jpg" alt="avatar">
+                                        <img class="w-full h-full object-cover object-center" src="assets/img/avatar/1.webp" alt="avatar">
                                     </div>
                                     <div class="flex flex-col gap-y-1">
                                         <div class="font-semibold">Ilsya Velixs</div>
@@ -130,7 +130,7 @@
                             <div class="my-5">
                                 <p class="text-sm line-clamp-3 mb-3 mx-2">Wibu!</p>
                                 <div class="aspect-[4/2.5] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700/30">
-                                    <img class="w-full h-full object-cover object-center" src="assets/img/thumbnails/1.jpg" alt="thumbnails">
+                                    <img class="w-full h-full object-cover object-center" src="assets/img/thumbnails/1.webp" alt="thumbnails">
                                 </div>
                             </div>
                             <!-- content end -->
@@ -164,7 +164,7 @@
                             <div class="flex flex-row justify-between items-center mx-2">
                                 <div class="flex flex-row gap-x-3 items-center">
                                     <div class="w-10 h-10 rounded-full overflow-hidden">
-                                        <img class="w-full h-full object-cover object-center" src="assets/img/avatar/1.jpg" alt="avatar">
+                                        <img class="w-full h-full object-cover object-center" src="assets/img/avatar/1.webp" alt="avatar">
                                     </div>
                                     <div class="flex flex-col gap-y-1">
                                         <div class="font-semibold">Ilsya Velixs</div>
@@ -183,7 +183,7 @@
                             <div class="my-5">
                                 <p class="text-sm line-clamp-3 mb-3 mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium consectetur magnam voluptas labore maxime laboriosam, consequuntur quaerat, corrupti mollitia molestiae voluptatibus reprehenderit animi necessitatibus eveniet aliquid non iste impedit voluptatem.</p>
                                 <div class="aspect-[4/2.5] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700/30">
-                                    <img class="w-full h-full object-cover object-center" src="assets/img/thumbnails/2.jpg" alt="thumbnails">
+                                    <img class="w-full h-full object-cover object-center" src="assets/img/thumbnails/2.webp" alt="thumbnails">
                                 </div>
                             </div>
                             <!-- content end -->
@@ -214,7 +214,7 @@
             </div>
         </div>
 
-        <div id="followers" role="tabpanel">
+        <div class="hidden" id="followers" role="tabpanel">
             <div class="md:text-2xl text-lg font-bold text-gray-900 dark:text-white my-5">Followers</div>
             <!-- card users start -->
             <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
