@@ -34,7 +34,7 @@ const paths = {
     },
     images: {
         src: [
-            "./src/img/**/*",
+            "./src/img/**/*.{webp}",
         ],
         output: "assets/img/",
         watch: "./src/img/**/*"
