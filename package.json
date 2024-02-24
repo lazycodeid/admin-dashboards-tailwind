@@ -50,6 +50,7 @@
     "yargs": "^17.3.1"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "webpack": "^5.70.0",
     "webpack-stream": "^7.0.0"
   }

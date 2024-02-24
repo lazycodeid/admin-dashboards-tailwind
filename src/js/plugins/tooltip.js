@@ -1,43 +1,58 @@
-document.querySelectorAll("[lazy-tooltip]").forEach((element) => {
-    const tooltip = document.createElement("div");
-    tooltip.className = "_lazy-tooltip";
-    tooltip.innerHTML = element.getAttribute("lazy-tooltip");
+import { createPopper } from "@popperjs/core"
 
-    element.addEventListener("mouseenter", () => {
-        document.body.insertAdjacentElement("afterend", tooltip);
-        positionTooltip(element, tooltip);
-        tooltip.classList.add("is-active")
-    });
+class LazyTooltip {
+    constructor(el){
+        this.el = el
+        this.content = document.createElement("div")
+        this.#init()
+    }
 
-    element.addEventListener("mouseleave", () => {
-        tooltip.classList.remove("is-active");
+    #init() {
+        this.el.addEventListener("mouseenter", () => {
+            this.#enter()
+        })
+
+        this.el.addEventListener("mouseleave", () => {
+            this.#leave()
+        })
+    }
+
+    #enter(){
+        this.content.className = "_lazy-tooltip";
+        this.content.innerHTML = this.el.getAttribute("lazy-tooltip");
+        document.body.insertAdjacentElement("beforeend", this.content);
+        createPopper(this.el, this.content, {
+            placement: 'top',
+			strategy: 'fixed',
+            modifiers: [
+				{
+					name: 'offset',
+					options: {
+						offset: [0, 5],
+					},
+				},
+			],
+        })
+        this.content.classList.add("is-active")
+    }
+
+    #leave(){
+        this.content.classList.remove("is-active")
         setTimeout(() => {
-            tooltip.remove();
-        },300)
-    });
+            this.content.remove()
+        }, 300)
+    }
 
-});
-
-function debounce(func, wait) {
-    let timeout;
-    return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => { func.apply(this, args); }, wait);
+    static autoInit() {
+        document.querySelectorAll("[lazy-tooltip]").forEach((element) => {
+            new LazyTooltip(element)
+        })
     }
 }
 
-function positionTooltip(targetElement, tooltipElement) {
-    const targetRect = targetElement.getBoundingClientRect();
-    const tooltipRect = tooltipElement.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
+window.LazyTooltip = LazyTooltip
+// window.$LazyTabsCollection = new Map();
 
-    const spaceAbove = targetRect.top;
-    const spaceBelow = viewportHeight - targetRect.bottom;
-    if (spaceAbove > spaceBelow || spaceBelow < tooltipRect.height) {
-        tooltipElement.style.top = targetRect.top - tooltipRect.height + "px";
-    } else {
-        tooltipElement.style.top = targetRect.bottom + "px";
-    }
-
-    tooltipElement.style.left = targetRect.left + "px";
-}
+window.addEventListener('load', () => {
+    LazyTooltip.autoInit()
+})
