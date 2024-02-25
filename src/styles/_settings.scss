@@ -42,6 +42,10 @@
                 @apply text-xs font-semibold;
             }
 
+            .ripple-wrapper {
+                @apply overflow-hidden h-full w-full absolute;
+            }
+
             span {
                 &.ripple {
                     @apply absolute rounded-full bg-gray-400/30;

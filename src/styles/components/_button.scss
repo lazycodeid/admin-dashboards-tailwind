@@ -45,9 +45,13 @@
     @apply min-w-16 py-2 px-4 text-[0.9em] font-medium;
     @apply dark:text-white text-gray-900;
 
+    .ripple-wrapper {
+        @apply overflow-hidden h-full w-full absolute;
+    }
+
     span {
         &.ripple {
-            @apply absolute rounded-full bg-gray-400/30;
+            @apply absolute rounded-full bg-gray-300/40;
             transform: scale(0);
             animation: ripple 900ms ease;
         }
