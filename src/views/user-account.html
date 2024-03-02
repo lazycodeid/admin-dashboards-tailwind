@@ -1,0 +1,133 @@
+{% extends "layouts/app.html" %}
+
+{% set title = "User Profile" %}
+
+{% block content %}
+<div class="_lazy-container-sm">
+    <div class="lazy-heading">
+        <div class="lazy-title">Account</div>
+        <ul class="lazy-breadcrumb">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="dot"></li>
+            <li><a href="#">User</a></li>
+            <li class="dot"></li>
+            <li class="active">Account</li>
+        </ul>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-5">
+        <div class="lg:col-span-4">
+            <div class="lazy-card">
+                <div class="lazy-card-body">
+                    <div class="flex justify-end">
+                        <div class="badge badge-label-success rounded-full font-bold">Verified</div>
+                    </div>
+                    <form class="flex justify-center mt-10 mb-5" id="avatar-upload" action="">
+                        <label>
+                            <input name="avatar" id="avatarInput" accept="image/*" type="file" tabindex="-1" class="hidden">
+                            <div class="group cursor-pointer relative border border-dashed p-2 rounded-full border-gray-400 dark:border-gray-600">
+                                <div class="w-32 h-32 aspect-w-1 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
+                                    <img id="avatarPreview" class="object-cover object-center w-full h-full" src="assets/img/avatar/1.webp" alt="avatar">
+                                    <div id="avatarLoading" style="display: none;" class="flex items-center justify-center text-gray-50 bg-gray-800/40 transition-opacity duration-300 ease-in-out"><i class="fa-duotone fa-spinner-third fa-xl fa-spin"></i></div>
+                                </div>
+                                <div class="absolute bg-gray-800/60 rounded-full w-32 h-32 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                    <div class="flex flex-col justify-center items-center gap-y-4 h-full text-gray-50 mt-2">
+                                        <i class="fa-duotone fa-arrow-up-from-arc fa-xl"></i>
+                                        <div class="text-[11px]">Change Avatar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </form>
+                    <div class="text-center mb-4 text-[12px] px-10 text-muted">Allowed *.jpeg, *.jpg, *.png, *.webp <br> max size of 3.1 MB</div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:col-span-8">
+            <div class="lazy-card p-2">
+                <div class="lazy-card-body">
+
+                    <div class="grid md:grid-cols-2 grid-cols-1 gap-x-4">
+                        <div class="relative mb-5" lazy-label-transition>
+                            <label for="inputName" class="lazy-label" >Name</label>
+                            <input id="inputName" type="text" name="name" class="lazy-input" required value="Ilham Cahya"/>
+                        </div>
+                        <div class="relative mb-5" lazy-label-transition>
+                            <label for="inputEmail" class="lazy-label" >Email Address</label>
+                            <input id="inputEmail" type="email" name="email" class="lazy-input" required value="ilsya@velixs.com"/>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 grid-cols-1 gap-x-4">
+                        <div class="relative mb-5" lazy-label-transition>
+                            <label for="inputPhone" class="lazy-label" >Phone Number</label>
+                            <input id="inputPhone" type="text" name="phone" class="lazy-input" required value="+62 812 3456 789"/>
+                        </div>
+                        <div class="relative mb-5" lazy-label-transition>
+                            <label for="inputAddress" class="lazy-label" >Address</label>
+                            <input id="inputAddress" type="text" name="address" class="lazy-input" required value="90210 Broadway Blvd"/>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 grid-cols-1 gap-x-4">
+                        <div class="relative mb-5" >
+                            <label for="inputCountry" class="lazy-label" >Country</label>
+                            <select id="inputCountry" name="country" class="lazy-select" lazy-select>
+                                <option value="" icon="fa-light fa-earth-africa">Select Country</option>
+                                <option value="id" icon="fa-light fa-earth-africa">Indonesia (ID) +62</option>
+                                <option value="us" icon="fa-light fa-earth-africa" selected>United States (US) +1</option>
+                                <option value="ru" icon="fa-light fa-earth-africa">Russia (RU) +7</option>
+                                <option value="tr" icon="fa-light fa-earth-africa">Turkey (TR) +90</option>
+                                <option value="lb" icon="fa-light fa-earth-africa">Lebanon (LB) +961</option>
+                                <option value="lb" icon="fa-light fa-earth-africa">Lebanon (LB) +961</option>
+                                <option value="lb" icon="fa-light fa-earth-africa">Lebanon (LB) +961</option>
+                            </select>
+                        </div>
+                        <div class="relative mb-5" lazy-label-transition>
+                            <label for="inputState" class="lazy-label" >State/Region</label>
+                            <input id="inputState" type="text" name="state" class="lazy-input" required value="California"/>
+                        </div>
+                    </div>
+
+                    <div class="relative mb-5" lazy-label-transition>
+                        <label for="inputAbout" class="lazy-label" >About</label>
+                        <textarea id="inputAbout" name="state" class="lazy-input" rows="6"></textarea>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button class="btn btn-dark">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block styles %}
+<!-- pages start: styles -->
+
+<!-- pages end: styles -->
+{% endblock %}
+
+{% block scripts %}
+<!-- pages start: scripts -->
+<script>
+    const avatarUpload = document.querySelector("#avatar-upload");
+    avatarUpload.querySelector("#avatarInput").addEventListener("change", (event) => {
+        avatarUpload.querySelector("#avatarPreview").src = URL.createObjectURL(event.target.files[0]);
+
+        // write your code here
+
+        // for example loading
+        avatarUpload.querySelector("#avatarLoading").style.display = "flex";
+        setTimeout(() => {
+            avatarUpload.querySelector("#avatarLoading").style.display = "none"
+        }, 3000)
+    })
+
+    const multFile = document.querySelector("#multFile");
+</script>
+<!-- pages end: scripts -->
+{% endblock %}

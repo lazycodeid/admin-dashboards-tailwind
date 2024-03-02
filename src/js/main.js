@@ -15,7 +15,22 @@ window.lazyDisableScrollbar = (status = true) => {
         document.body.classList.remove("_lazy-disable-scroll", "with-pr");
     }
 }
- 
+
+document.querySelectorAll("[lazy-label-transition]").forEach((element)=>{
+    const input = element.querySelector(".lazy-input")
+    const label = element.querySelector(".lazy-label")
+    if(!input) return
+    if(!label) return
+    input.classList.add("input-transition")
+    label.classList.add("label-transition")
+    if(input.value) label.classList.add("active")
+    input.addEventListener("focus", ()=> { label.classList.add("active", "focus") })
+    input.addEventListener("active", ()=> { label.classList.add("active", "focus") })
+    input.addEventListener("blur", ()=>{ 
+        label.classList.remove("focus")
+        if(input.value == "") label.classList.remove("active") 
+    })
+})
 
 // for demo auto active sidebar
 document.querySelectorAll("[lazy-simplebar-init] nav ._lazy-nav-item").forEach((element)=>{

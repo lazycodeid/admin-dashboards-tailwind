@@ -1,0 +1,76 @@
+@layer components {
+    
+    .lazy-input, .lazy-select {
+        @apply block w-full bg-transparent rounded-lg text-sm/none p-3.5 dark:border-gray-700 border-gray-300 focus:outline-none focus:border-gray-800 dark:focus:border-gray-300 focus:ring-0;
+
+        &.error {
+            @apply border-red-400 dark:border-red-500;
+        }
+    }
+
+    .lazy-select {
+        @apply appearance-none dark:bg-gray-800 bg-white;
+    }
+
+    .lazy-input {
+        &.input-transition[type="text"], .input-transition[type="email"], .input-transition[type="password"] {
+            @apply [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0;
+        }
+    }
+
+    .lazy-label {
+        @apply absolute block text-sm font-medium text-muted left-2 top-0 mb-0 z-[1];
+        @apply -translate-y-[.6rem] scale-[0.9] bg-white dark:bg-gray-800 px-1;
+
+        &.error {
+            @apply text-red-400 dark:text-red-500 #{!important};
+        }
+
+        &.label-transition {
+            @apply pointer-events-none text-sm/none left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-3 leading-[1.6] text-muted transition-all duration-200 ease-out;
+            @apply bg-transparent text-muted scale-100 translate-y-0 px-1;
+
+            &.active {
+                @apply -translate-y-[0.6rem] scale-[0.9] bg-white dark:bg-gray-800 pt-0;
+            }
+
+            &.focus {
+                @apply dark:text-white text-gray-700;
+            }
+        }
+    }
+
+    
+    .lazy-select-wrapper {
+        @apply relative;
+
+        .select {
+            @apply border flex flex-row items-center cursor-pointer focus:border-gray-800 dark:focus:border-gray-300;
+
+            .select-title {
+                @apply flex-auto truncate flex flex-row gap-x-2;
+            }
+        }
+
+        .select-content { 
+            @apply absolute w-full z-10 rounded-xl bg-white dark:bg-gray-800 p-2 bg-gradient shadow;
+
+
+            .select-list {
+                @apply w-full min-h-5 max-h-80 flex flex-col;
+
+                .sub {
+                    @apply font-medium text-sm mt-3;
+                }
+                
+                .list {
+                    @apply mt-1 rounded-lg w-full flex flex-row items-center gap-x-2 hover:bg-gray-800/5 hover:dark:bg-gray-300/5 p-2.5 cursor-pointer select-none;
+
+                    &.selected {
+                        @apply bg-gray-800/5 dark:bg-gray-300/5;
+                    }
+                }
+            }
+        }
+    }
+}

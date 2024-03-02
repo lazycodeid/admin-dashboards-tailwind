@@ -26,7 +26,10 @@ const paths = {
         ]
     },
     scripts: {
-        src: "./src/js/**/*.js",
+        src: [
+            "./src/js/**/*.js",
+            "!./src/js/pages/**/*"
+        ],
         output: "assets/js/",
         watch: [
             "./src/js/**/*.js"

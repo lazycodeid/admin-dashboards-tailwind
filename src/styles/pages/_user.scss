@@ -1,5 +1,7 @@
 @layer components {
     
+    // user-profile
+
     .profile-header-wrapper {
         @apply relative overflow-hidden rounded-xl md:h-72 md:max-h-72 h-64 max-h-64 text-white contrast mb-5;
 
@@ -31,16 +33,16 @@
         }
 
         .profile-footer {
-            @apply absolute bottom-0 left-0 max-h-10 h-10 flex lg:justify-end justify-center items-center px-5 bg-gray-800/40 backdrop-blur-sm text-gray-900 w-full;
+            @apply absolute bottom-0 left-0 max-h-10 h-10 flex lg:justify-end justify-center items-center px-5 bg-white text-gray-700 dark:bg-gray-800 dark:text-white w-full;
 
             .actions {
-                @apply relative flex items-center gap-x-5 text-sm text-white;
+                @apply relative flex items-center gap-x-5 text-sm;
 
                 .list-item {
                     @apply font-medium flex items-center;
 
                     &.is-active {
-                        @apply text-primary-200;
+                        @apply text-primary-300;
                     }
 
                     span {
@@ -60,4 +62,7 @@
         }
     }
 
+    // user-account
+
+    
 }

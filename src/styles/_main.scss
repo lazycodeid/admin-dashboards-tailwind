@@ -98,7 +98,6 @@
         }
     }
 
- 
     .bg-main {
         @apply bg-white;
         @apply dark:bg-gray-900 #{!important};
@@ -134,7 +133,27 @@
         @apply text-gray-500 dark:text-gray-600;
     }
 
-    // heading
+
+    // input start
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active{
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: unset;
+        transition: background-color 5000s ease-in-out 0s;
+        box-shadow: inset 0 0 20px 20px transparent;
+    }
+
+    :is([theme-mode="dark"]) {
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active{
+            -webkit-text-fill-color: #ffffff;
+        }
+    }
+
     .lazy-heading {
         @apply mb-10;
 
@@ -154,5 +173,5 @@
             }
         }
     }
-
+    
 }
