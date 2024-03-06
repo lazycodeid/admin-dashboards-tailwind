@@ -21,13 +21,22 @@ gulp.task("scripts", () => {
                 filename: 'app.js'
             },
             devtool: production ? false : "source-map",
-        }), webpack)
+        }, webpack))
         .pipe(gulpif(production, rename({
             suffix: ".min"
         })))
         .pipe(gulp.dest(paths.output(paths.scripts.output)))
         .pipe(debug({
             "title": "JS files"
+        }))
+        .pipe(browsersync.stream());
+});
+
+gulp.task("scripts-pages", () => {
+    return gulp.src(paths.scripts.srcPages)
+        .pipe(gulp.dest(paths.output(paths.scripts.outputPages)))
+        .pipe(debug({
+            "title": "JS Pages"
         }))
         .pipe(browsersync.stream());
 });

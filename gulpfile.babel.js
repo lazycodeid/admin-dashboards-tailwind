@@ -30,7 +30,9 @@ const paths = {
             "./src/js/**/*.js",
             "!./src/js/pages/**/*"
         ],
+        srcPages: "./src/js/pages/**/*.js",
         output: "assets/js/",
+        outputPages: "assets/js/pages",
         watch: [
             "./src/js/**/*.js"
         ]
@@ -56,10 +58,10 @@ requireDir("./gulp-tasks/");
 export { paths };
 
 export const development = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "third_party"]),
+    gulp.parallel(["views", "styles", "scripts", "scripts-pages", "images", "third_party"]),
     gulp.parallel("serve"));
     
 export const prod = gulp.series("clean",
-    gulp.parallel(["views", "styles", "scripts", "images", "third_party"]));
+    gulp.parallel(["views", "styles", "scripts", "scripts-pages", "images", "third_party"]));
 
 export default development;

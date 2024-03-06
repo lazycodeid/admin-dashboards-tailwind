@@ -1,3 +1,8 @@
+/*
+ * @version: 1.0.0
+ * @author: Ilsya@velixs
+ * Copyright 2024 VELIXS
+ */
 import { createPopper } from "@popperjs/core"
 
 class LazyTooltip {
